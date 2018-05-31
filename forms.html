@@ -7,12 +7,38 @@
 <body>
 
 <form method="Post" action="http://webhook.site/1862f699-9fc6-4f99-a3af-99268fb45227">
-    <label for="email"></label>
-    <input id="email" name="email" type="text" value="Enter your Email address">
+    <label for="email">Email</label>
+    <input type="text" id="email" name="email"  placeholder="Enter your Email">
+    <br><br>
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password"  placeholder="Enter your password">
+    <br><br>
+    <textarea name="Bio" placeholder="Tell us about yourself"></textarea>
     <br>
-    <label for="password"></label>
-    <input id="password" name="password" type="text" value="Enter your password">
+    <h3>How did you hear about us?</h3>
     <br>
+    <label for="Billboard">Billboard</label>
+    <input id="Billboard" type="radio" name="quiz_question_1" value="Billboard">
+    <br>
+    <label for="Radio Advertisement">Radio Advertisement</label>
+    <input id="Radio Advertisement" type="radio" name="quiz_question_1" value="Radio Advertisement">
+    <br>
+    <label for="Internet Advertisement">Internet Advertisement</label>
+    <input id="Internet Advertisement" type="radio" name="quiz_question_1" value="Internet Advertisement">
+    <br>
+    <label for="Other">Other</label>
+    <input id="Other" type="radio" name="quiz_question_1" value="Other">
+    <br>
+    <br>
+    <select name="browser">
+        <option value="Chrome">Google Chrome</option>
+        <option value="IE">Internet Explorer</option>
+        <option value="Firefox">Mozilla Firefox</option>
+        <option value="Safari">Safari</option>
+    </select>
+    <br>
+    <br>
+
     <input type="submit">
 
 </form>
