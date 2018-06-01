@@ -21,6 +21,7 @@ body, html {
     padding: .5em;
     border-radius: 5px;
     width: 700px;
+    border: .5px solid lightgrey;
 }
 
 /*The following is modified in order to use CSS variables...*/
