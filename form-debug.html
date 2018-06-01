@@ -2,28 +2,32 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title></title>
+    <title>Sign Up!</title>
 </head>
+
 <body>
-<h1>Please Sign Up</h1>
+
+<h1>Please Sign Up!</h1>
+
 <form method="POST" action="http://webhook.site/bb1c4326-e90a-440f-83da-3fc1330ef2e8">
-    <label for="username">Username</label>
+
+    <label for="username">Username</label><br>
     <input id="username" type="text" name="username">
     <br>
 
-    <label for="email">Email</label>
+    <label for="email">Email</label><br>
     <input id="email" type="text" name="email">
     <br>
 
-    <label for="password">password</label>
+    <label for="password">Password</label><br>
     <input id="password" type="password" name="password">
     <br>
 
-    <label for="confirm_password">confirm password</label>
+    <label for="confirm_password">Confirm Password</label><br>
     <input id="confirm_password" type="password" name="confirm_password">
     <br>
 
-    <h2>Filing Status</h2>
+    <h3>Filing Status:</h3>
 
     <label for="single">
         <input id="single" type="radio" name="filing_status" value="single">
@@ -49,7 +53,7 @@
     </label>
     <br>
 
-    <h2>This past year I was (check all that apply)</h2>
+    <h3>This past year I was: (check all that apply)</h3>
 
     <label for="self_employed">
         <input id="self_employed" type="checkbox" name="employment_status" value="self_employed">
@@ -69,25 +73,29 @@
     </label>
     <br>
 
-    <h2>What kind of phone do you have</h2>
+    <h3>What kind of phone do you have?</h3>
 
     <select name="phone_type" title="phone-type">
         <option value="android">Android</option>
-        <option value="iphone">iPhone</option>
+        <option value="iphone"selected>iPhone</option>
         <option value="windows">Windows Phone</option>
         <option value="other">Other</option>
     </select>
 
+    <br>
+    <br>
     <hr>
+    <br>
 
     <label for="newsletter">Sign Me Up For The Newsletter
         <input type="checkbox" name="newsletter" id="newsletter" checked>
     </label>
-
+<br><br>
 
     <button>Submit</button>
 </form>
-
+<br>
+<br>
 
 
 </body>
