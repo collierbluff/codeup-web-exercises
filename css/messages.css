@@ -4,6 +4,16 @@ body, html {
     padding: 0;
     margin: 0;
     font-family: Arial, Ubuntu, sans-serif;
+
+    /*Added CSS variables, for fun I guess?*/
+    --text-info:rgb(95, 76, 170);
+    --bg-info:rgb(204, 220, 255);
+    --text-success:rgb(76, 175, 130);
+    --bg-success:rgb(197, 247, 218);
+    --text-warning:rgb(158, 145, 51);
+    --bg-warning:rgb(250, 254, 199);
+    --text-error:rgb(144, 5, 47);
+    --bg-error:rgb(255, 207, 214);
 }
 
 .message{
@@ -13,22 +23,45 @@ body, html {
     width: 700px;
 }
 
+/*The following is modified in order to use CSS variables...*/
+
+/*.info{*/
+    /*color: rgb(95, 76, 170);*/
+    /*background-color: rgb(204, 220, 255);*/
+/*}*/
+
 .info{
-    color: rgb(95, 76, 170);
-    background-color: rgb(204, 220, 255);
+    color: var(--text-info);
+    background-color: var(--bg-info) ;
+
 }
+
+/*.success{*/
+    /*color: rgb(76, 175, 130);*/
+    /*background-color: rgb(197, 247, 218);*/
+/*}*/
 
 .success{
-    color: rgb(76, 175, 130);
-    background-color: rgb(197, 247, 218);
+    color: var(--text-success);
+    background-color: var(--bg-success);
 }
+
+/*.warning{*/
+    /*color: rgb(158, 145, 51);*/
+    /*background-color: rgb(250, 254, 199);*/
+/*}*/
 
 .warning{
-    color: rgb(158, 145, 51);
-    background-color: rgb(250, 254, 199);
+    color: var(--text-warning);
+    background-color: var(--bg-warning);
 }
 
+/*.error{*/
+    /*color: rgb(144, 5, 47);*/
+    /*background-color: rgb(255, 207, 214);*/
+/*}*/
+
 .error{
-    color: rgb(144, 5, 47);
-    background-color: rgb(255, 207, 214);
+    color: var(--text-error);
+    background-color: var(--bg-error);
 }
