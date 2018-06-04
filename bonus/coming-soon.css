@@ -1,0 +1,42 @@
+body{
+    font-family: Raleway, sans-serif;
+    background-image: url("forest.jpg");
+    color: white;
+}
+
+header{
+    padding:.5em;
+}
+
+.bottom{
+    position: absolute;
+    bottom: 0;
+    padding: .5em;
+    font-size: small;
+}
+
+.center{
+    position: absolute;
+    left: 0;
+    top: 40%;
+    width: 100%;
+    text-align: center;
+}
+.soon{
+    font-size: 50px;
+    margin-bottom: 0.5em;
+    display: inline-block;
+    font-weight: lighter;
+    text-transform: uppercase;
+}
+
+.days{
+    font-size: medium;
+    margin-top: .5em;
+    display: inline-block;
+}
+
+.hr{
+    width: 200px;
+
+}
