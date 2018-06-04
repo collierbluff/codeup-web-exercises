@@ -1,3 +1,10 @@
+footer{
+    clear: both;
+    position: relative;
+    top: 3em;
+    margin-bottom: 3.5em;
+
+}
 
 .alert-info a{
     color: black;
@@ -10,6 +17,7 @@
     text-align: center;
     line-height: 50px;
     border: 1px gray solid;
+    margin: 0 1em;
 }
 
 h1{
@@ -25,18 +33,18 @@ h1{
     list-style: none;
     text-align: center;
     position: relative;
-    right: 3em;
-    width: 100%;
+    right: 1em;
 }
 
 .nav-links li{
-    margin: .5em;
+    margin: .5em auto;
     padding: 1em;
     background-color: lightgray;
 }
 
 #main{
     font-family: "Comic Sans MS", serif;
+    margin-bottom: 3em;
 }
 
 .sub-section{
@@ -44,18 +52,14 @@ h1{
     font-style: italic;
 }
 
-footer{
-    position: relative;
-    top: 3em;
-    margin: 1em;
-}
+
 
 .header-img img{
     max-width: 100%;
-    height: 224px;
+    max-height: 100%;
 }
 
-@media screen and (min-width:800px) {
+@media screen and (min-width:890px) {
 
     .hidden-on-desktop{
         display: none;
@@ -63,6 +67,35 @@ footer{
 
     .header-img img{
         height: 385px;
+        width: 890px;
     }
 
+    h1{
+        display: inline;
+        position: relative;
+        top: 14px;
+        left: 1em;
+    }
+
+
+    .nav-links li {
+        background-color: white;
+        display: inline-block;
+    }
+
+    nav{
+        float: right;
+    }
+
+    #main {
+        width: calc(60% - 2em);
+        float: left;
+        margin:1em ;
+    }
+
+    .sub-section{
+        width: calc(40% - 2em);
+        float: left;
+        margin: 1em;
+    }
 }
