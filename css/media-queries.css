@@ -1,9 +1,14 @@
 footer{
-    clear: both;
     position: relative;
     top: 4em;
     margin-bottom: 2em;
     margin-left: 1em;
+}
+
+h1 {
+    text-align: center;
+    font-size: 3em;
+    font-family: Arial, sans-serif;
 }
 
 .alert-info a{
@@ -12,7 +17,7 @@ footer{
 }
 
 .alert-info{
-    background-color: rgb(192, 255, 255);
+    background-color: #C0FFFF;
     height: 50px;
     text-align: center;
     line-height: 50px;
@@ -20,26 +25,16 @@ footer{
     margin: 0 1em;
 }
 
-h1{
-    width: 100%;
-    text-align: center;
-    font-size: 3em;
-    font-family: Arial, sans-serif;
-    position: relative;
-    bottom: .5em;
-}
-
 .nav-links{
     list-style: none;
     text-align: center;
-    margin: 0 auto;
     position: relative;
     right: 1.25em;
-    bottom: 2em;
+    bottom: .5em;
 }
 
 .nav-links li{
-    margin: .5em auto;
+    margin-bottom: 1em;
     padding: 1em;
     background-color: lightgray;
 }
@@ -73,15 +68,10 @@ h1{
         display: none;
     }
 
-    .header-img img{
-        height: 385px;
-        width: 890px;
-    }
-
     h1{
         display: inline;
         position: relative;
-        top: 14px;
+        top: .5em;
         left: 1em;
     }
 
@@ -93,7 +83,7 @@ h1{
 
     nav{
         float: right;
-        padding-top: 3em;
+        padding-top: 1.5em;
     }
 
     #main {
