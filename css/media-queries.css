@@ -32,8 +32,9 @@ h1{
 .nav-links{
     list-style: none;
     text-align: center;
+    margin: 0 auto;
     position: relative;
-    right: 1em;
+    right: 1.25em;
     bottom: 2em;
 }
 
@@ -84,8 +85,7 @@ h1{
 
     nav{
         float: right;
-        position: relative;
-        padding-top: 2em;
+        padding-top: 3em;
     }
 
     #main {
