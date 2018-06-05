@@ -59,6 +59,14 @@ h1{
     max-height: 100%;
 }
 
+#social-media-links img{
+    width:25px;
+    float: right;
+    margin-right: 1.5em;
+    position: relative;
+    bottom: 2.5em;
+}
+
 @media screen and (min-width:890px) {
 
     .hidden-on-desktop{
@@ -102,5 +110,9 @@ h1{
 
     footer{
         top: 14em;
+    }
+
+    #social-media-links{
+        margin-right: 3em;
     }
 }
