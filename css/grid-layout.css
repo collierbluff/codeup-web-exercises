@@ -1,0 +1,36 @@
+.row{
+    width:100%;
+}
+
+.column{
+    float: left;
+    background-color: lightblue;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.one-half{
+    width: 50%;
+}
+
+.one-third{
+    width: 33.33%;
+}
+
+.one-fourth{
+    width: 25%;
+}
+
+.one-sixth{
+    width: 16.66%;
+}
+
+.one-eighth{
+    width: 12.5%;
+}
+
+@media screen and (max-width:500px)  {
+    .column{
+        width: 100%
+    }
+}
