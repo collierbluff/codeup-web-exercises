@@ -4,7 +4,6 @@
 
 .column{
     float: left;
-    background-color: lightblue;
     box-sizing: border-box;
     padding: 10px;
 }
@@ -29,7 +28,11 @@
     width: 12.5%;
 }
 
-@media screen and (max-width:500px)  {
+.two-thirds{
+    width: 66.66%;
+}
+
+@media screen and (max-width:580px)  {
     .column{
         width: 100%
     }

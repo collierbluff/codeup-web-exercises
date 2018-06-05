@@ -1,17 +1,23 @@
 body{
-    margin: 1.5em;
+    margin: 1em;
     font-family: Helvetica, sans-serif;
 }
 
 footer{
     position: relative;
     top: 4em;
-    margin: 0 0 2em 1em;
+}
+
+footer p{
+    position: relative;
+    bottom: .5em;
 }
 
 h1 {
     text-align: center;
     font-size: 3em;
+    margin-bottom: 0;
+    margin-top: .5em;
 }
 
 ul{
@@ -23,7 +29,7 @@ ul{
     text-decoration: none;
     display: block;
     background-color: #C0FFFF;
-    padding: 1em;
+    padding: 1em 0;
     text-align: center;
     border: 2px gray solid;
 }
@@ -56,25 +62,12 @@ ul{
 
 #social-media-links img{
     width:25px;
-    float: right;
-    margin-right: 1.5em;
-    position: relative;
-    bottom: 2.5em;
 }
 
-@media screen and (min-width:768px) {
+@media screen and (min-width:580px) {
 
     .hidden-on-desktop{
         display: none;
-    }
-
-    h1{
-        float: left;
-    }
-
-    nav{
-        float: right;
-        padding-top: 1.5em;
     }
 
     .nav-links li{
@@ -84,25 +77,14 @@ ul{
 
     .nav-links a{
         background-color: white;
-    }
-
-    #main {
-        width: calc(65% - 2em);
-        float: left;
-        margin:1em ;
-    }
-
-    .sub-section{
-        width: calc(35% - 2em);
-        float: left;
-        margin: 1em;
+        padding: 2em .5em 0 0;
     }
 
     footer{
         top: 14em;
     }
 
-    #social-media-links{
-        margin-right: 3em;
+    #social-media-links a{
+        margin-right: 1em;
     }
 }
