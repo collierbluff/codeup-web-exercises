@@ -4,6 +4,17 @@
     margin: .1em;
 }
 
+#container{
+    max-width: 1500px;
+
+}
+header{
+    background-color: white;
+}
+
+.grey{
+    background-color: lightgrey;
+}
 h2{
     padding: 1em;
 }
@@ -17,19 +28,58 @@ p{
     margin: 1em 20%;
 }
 
-.artist{
-    width:300px;
-    display: block;
-    margin: 0 auto;
-}
 
 .about-link{
     color: black;
     float: right;
 }
 
+#about{
+    text-align: center;
+}
+
 .about-header{
     font-family: "Segoe UI", Arial, sans-serif;
-    text-align: center;
     font-weight: lighter;
+}
+
+.artist{
+    width:290px;
+    display: block;
+    margin: 0 auto;
+}
+
+.pink{
+    color: red;
+}
+
+form{
+    text-align: center;
+    font-weight: bolder;
+}
+
+form input{
+    margin: 1em 0;
+    width: 60%;
+    padding: 1em 0;
+    border: 3px solid lightgrey;
+}
+
+form button{
+    width: 60%;
+    padding: 1.5em 0;
+    color: white;
+    font-weight: lighter;
+    margin-top: 1em;
+    background-color: gray;
+    text-align: center;
+}
+
+#footer{
+    text-align: center;
+    margin-top: 2em;
+}
+
+@media screen and (min-width: 600px) {
+
 }

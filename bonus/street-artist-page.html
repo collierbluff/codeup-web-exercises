@@ -4,21 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>My Art</title>
+    <link rel="stylesheet" href="../css/grid-layout.css">
     <link rel="stylesheet" href="street-art.css">
 </head>
 <body>
 
+<div id="main">
+
 <header>
     <h2>My Art<a href="#about"><span class="about-link">About</span></a></h2>
 </header>
-
+<div class="grey">
 <main>
 
-    <img src="streetart.jpg">
-    <img src="streetart2.jpg">
-    <img src="streetart3.jpg">
-    <img src="streetart4.jpg">
-    <img src="streetart5.jpg">
+    <img src="streetart.jpg" class="column one-half">
+    <img src="streetart2.jpg" class="column one-half">
+    <img src="streetart3.jpg" class="column one-half">
+    <img src="streetart4.jpg" class="column one-half">
+    <img src="streetart5.jpg" class="column one-half">
 
 </main>
 
@@ -30,7 +33,6 @@
         Proin facilisis risus auctor suscipit auctor. Proin orci massa, pretium dapibus risus nec, auctor tincidunt ipsum.
         Nunc non consequat mi. Fusce iaculis blandit purus in suscipit. Etiam et suscipit libero, nec dictum est. Maecenas vel tincidunt metus.
         In ut lectus ac tortor aliquet fermentum quis eu tortor. Fusce eleifend elit enim, molestie sollicitudin nisi suscipit at.
-        Sed velit nibh, lobortis nec justo eget, aliquet luctus ipsum. Aenean efficitur faucibus risus, luctus convallis massa congue vel.
 
 
     </p>
@@ -38,7 +40,8 @@
     <h3 class="pink">Do not hesitate to contact me!</h3>
 </section>
 
-<form>
+<form action="" target="_blank" method="get">
+
     <label for="name">Name</label><br>
     <input type="text" name="name" id="name">
     <br>
@@ -54,8 +57,10 @@
     <button>Send</button>
 </form>
 
-<footer>
+<footer id="footer">
     Powered by w3.css
 </footer>
+</div>
+</div>
 </body>
 </html>
