@@ -64,7 +64,7 @@ ul{
     width:25px;
 }
 
-@media screen and (min-width:580px) {
+@media screen and (min-width:700px) {
 
     .hidden-on-desktop{
         display: none;
