@@ -16,7 +16,7 @@
 <body>
 
 <!--Nav Bar-->
-    <nav class="navbar navbar-expand-sm navbar-light bg-light border-top">
+    <nav class="navbar navbar-expand-md navbar-light bg-light border-top">
 
         <a class="navbar-brand" href="">Pizza World</a>
 
@@ -51,7 +51,7 @@
 
         <div class="jumbotron d-none d-sm-block">
 
-            <h1>Welcome to Pizza World!</h1>
+                <h1>Welcome to Pizza World!</h1>
 
         </div>
 
@@ -59,11 +59,11 @@
 
             <h2>Build your own pizza!</h2>
 
-            <!--Main Nav Tabs-->
+            <!--Body Nav Tabs-->
         <nav>
             <ul class="nav nav-tabs form-control">
-                <li class="nav-item active">
-                    <a class="nav-link" data-toggle="tab" href="#size+crust"><span class="badge badge-pill badge-dark mr-2">1</span>Size and Crust</a>
+                <li class="nav-item">
+                    <a class="nav-link active" data-toggle="tab" href="#size+crust"><span class="badge badge-pill badge-dark mr-2">1</span>Size and Crust</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" data-toggle="tab" href="#cheese+sauce"><span class="badge badge-pill badge-dark mr-2">2</span>Cheese and Sauce</a>
@@ -76,8 +76,8 @@
         </nav>
 
 
-
-            <div class="tab-content">
+            <form method="POST" action="http://webhook.site/551665b0-faae-47c3-86ba-6b014056fe03" target="_blank">
+            <div class="tab-content form-group">
 
             <!--Size and Crust Tab-->
             <div class="card tab-pane active" id="size+crust">
@@ -88,7 +88,7 @@
                         <h6 class="card-header pl-3 py-1 bg-light">Hand Tossed</h6>
 
                         <div class="card-body">
-                            Garlic seasoned crust with a rich, buttery taste.
+                            <div class="mb-2">Garlic seasoned crust with a rich, buttery taste.</div>
 
                             <ul class="list-group form-check">
                                 <li class="list-group-item">
@@ -106,9 +106,10 @@
                             </ul>
                         </div>
                     </div>
-
+                    <div class="card mt-2">
+                    <h6 class="card-header pl-3 py-1 bg-light">Crispy Thin</h6>
                     <div class="card-body">
-                        Thin enough for optimum crispy to crunchy ratio.
+                        <div class="mb-2"> Thin enough for optimum crispy to crunchy ratio.</div>
 
                         <ul class="list-group form-check">
                             <li class="list-group-item">
@@ -126,12 +127,14 @@
                         </ul>
                     </div>
 
-                    <div class="card-footer pb-0">
-                        <p class="text-right"><a class="btn btn-primary" href="#" role="button">Next Step<i class="fas fa-angle-right ml-1"></i></a></p>
-                    </div>
 
-                    </div>
-
+                </div>
+                </div>
+                <div class="card-footer mb-0">
+                    <p class="text-right">
+                        <a class="btn btn-primary mt-2" href="#" role="button">Next Step<i class="fas fa-angle-right ml-1"></i></a>
+                    </p>
+                </div>
             </div>
             <!--Cheese and Sauce Tab-->
 
@@ -145,23 +148,28 @@
 
                         <div class="card-body">
                             How Much?
-
+                            <ul class="list-group">
+                                <li class="list-group-item">
                             <select class="form-control mt-1" id="cheese" title="cheese">
                                 <option>Light</option>
                                 <option selected>Normal</option>
                                 <option>Extra</option>
                                 <option>Double</option>
                             </select>
-
+                                </li>
+                            </ul>
                         </div>
+                    </div>
 
+                    <div class="card mt-2">
                         <h6 class="card-header pl-3 py-1 bg-light">Sauce</h6>
 
                         <div class="card-body">
+                            What Type?
 
-                            <ul class="list-group form-check">
+                            <ul class="list-group">
                                 <li class="list-group-item">
-                                    What Type?
+
                                     <select class="form-control mt-1" id="sauce-type" title="sauce-type">
                                         <option>Marinara Sauce</option>
                                         <option selected>Tomato Sauce</option>
@@ -170,8 +178,9 @@
                                     </select>
 
                                 </li>
+                                How Much?
                                 <li class="list-group-item">
-                                    How Much?
+
                                     <select class="form-control mt-1" id="sauce-amount" title="sauce-amount">
                                         <option>Light</option>
                                         <option selected>Normal</option>
@@ -181,13 +190,15 @@
                             </ul>
                         </div>
 
-                        <div class="card-footer pb-0 btn-group" role="group" aria-label="back-and-forth">
-                            <p class="ml-auto">
-                                <a class="btn btn-primary" href="#" role="button"><i class="fas fa-angle-left mr-1"></i>Previous Step</a>
-                                <a class="btn btn-primary" href="#" role="button">Next Step<i class="fas fa-angle-right ml-1"></i></a>
-                            </p>
-                        </div>
+                    </div>
 
+                </div>
+
+
+                <div class="card-footer text-right">
+                    <div class= "btn-group" role="group" aria-label="back-and-forth">
+                        <a class="btn btn-primary mt-2" href="#" role="button"><i class="fas fa-angle-left mr-1"></i>Previous Step</a>
+                        <a class="btn btn-primary border-left mt-2" href="#" role="button">Next Step<i class="fas fa-angle-right ml-1"></i></a>
                     </div>
                 </div>
             </div>
@@ -203,25 +214,25 @@
                         <div class="card-body">
 
                             <ul class="list-group form-check">
-                                <li>
+                                <li class="list-group-item">
                                     <input class="form-check-input ml-1" type="checkbox" id="beef">
                                     <label class="form-check-label ml-4" for="beef">
                                         Beef
                                     </label>
                                 </li>
-                                <li>
+                                <li class="list-group-item">
                                     <input class="form-check-input ml-1" type="checkbox" id="ham">
                                     <label class="form-check-label ml-4" for="ham">
                                         Ham
                                     </label>
                                 </li>
-                                <li>
+                                <li class="list-group-item">
                                     <input class="form-check-input ml-1" type="checkbox" id="philly-steak">
                                     <label class="form-check-label ml-4" for="philly-steak">
                                         Philly Steak
                                     </label>
                                 </li>
-                                <li>
+                                <li class="list-group-item">
                                     <input class="form-check-input ml-1" type="checkbox" id="bacon">
                                     <label class="form-check-label ml-4" for="bacon">
                                         Bacon
@@ -238,25 +249,25 @@
                         <div class="card-body">
                             <ul class="list-group form-check">
 
-                                <li>
+                                <li class="list-group-item">
                                     <input class="form-check-input ml-1" type="checkbox" id="green-pepp">
                                     <label class="form-check-label ml-4" for="green-pepp">
                                         Green Peppers
                                     </label>
                                 </li>
-                                <li>
+                                <li class="list-group-item">
                                     <input class="form-check-input ml-1" type="checkbox" id="mushrooms">
                                     <label class="form-check-label ml-4" for="mushrooms">
                                         Mushrooms
                                     </label>
                                 </li>
-                                <li>
+                                <li class="list-group-item">
                                     <input class="form-check-input ml-1" type="checkbox" id="onion">
                                     <label class="form-check-label ml-4" for="onion">
                                         Onions
                                     </label>
                                 </li>
-                                <li>
+                                <li class="list-group-item">
                                     <input class="form-check-input ml-1" type="checkbox" id="jal-pepp">
                                     <label class="form-check-label ml-4" for="jal-pepp">
                                         Jalapeno Peppers
@@ -268,14 +279,14 @@
                     </div>
                 </div>
 
-                <div class="card-footer pb-0">
+                <div class="card-footer mb-0">
                     <p class="text-right">
-                        <a class="btn btn-primary" href="#" role="button">Checkout<i class="fas fa-shopping-cart ml-1"></i></a>
+                        <button type="submit" class="btn btn-primary mt-2">Checkout<i class="fas fa-shopping-cart ml-1"></i></button>
                     </p>
                 </div>
-
             </div>
             </div>
+            </form>
         </main>
     </div>
 
