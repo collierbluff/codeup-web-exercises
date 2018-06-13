@@ -122,4 +122,169 @@ function applyDiscount(price, discount_percent){
 
 console.log(applyDiscount(39.99, .2).toFixed(2));
 
+//End of IIFE
+
 })();
+
+"use strict";
+//Simple Function Drills
+
+function returnTwo() {
+    return 2;
+}
+
+// console.log(returnTwo());
+
+function returnName() {
+
+    return "Collier";
+    
+}
+
+// console.log(returnName());
+
+function addThree(number) {
+    return number + 3;
+}
+
+// console.log(addThree(5));
+
+function sayString(string) {
+    return string;
+}
+
+// console.log(sayString("test"));
+
+function sayHowdy() {
+
+    console.log("Howdy!");
+    
+}
+
+// sayHowdy();
+
+//Challenge Function Drills
+
+function identity(input) {
+
+    return input;
+}
+
+function getRandomNumber(min, max) {
+
+    return Math.random() * (max - min) + min;
+}
+
+// console.log(getRandomNumber(3, 10));
+
+function first(input) {
+
+    return input.charAt(0);
+}
+
+// console.log(first("Sample"));
+
+function last(input) {
+
+    return input.charAt(input.length - 1);
+}
+
+// console.log(last("Sample"));
+
+function rest(input) {
+
+    return input.slice(1);
+}
+
+// console.log(rest("Sample"));
+
+function reverse(input){
+
+    var split = input.split("");
+    var reverse = split.reverse();
+    return reverse.join("");
+}
+
+// console.log(reverse("Sample"));
+
+function isNumeric(input){
+
+    return typeof input === "number";
+}
+
+// console.log(isNumeric("63771"));
+
+function count(input){
+
+    return input.length;
+}
+
+// console.log(count("Test.txt"));
+
+function add(a, b){
+
+    return parseInt(a) + parseInt(b);
+}
+
+function subtract(a, b) {
+
+    return parseInt(a) - parseInt(b);
+}
+
+function multiply(a, b) {
+
+    return parseInt(a) * parseInt(b);
+}
+
+function divide(numerator, denominator) {
+
+    return parseInt(numerator) / parseInt(denominator);
+}
+
+function remainder(number, divisor) {
+
+    return parseInt(number) % parseInt(divisor);
+}
+
+function square(a){
+
+    return parseInt(a) * parseInt(a);
+}
+
+//Gold Star Drills
+
+function sumOfSquares(a, b) {
+
+   var a_sq = square(a);
+    var b_sq = square(b);
+    return add(a_sq, b_sq);
+}
+
+// console.log(sumOfSquares(5, 3));
+
+function doMath(operator, a, b) {
+
+    if (operator === add){
+        return add(a, b);
+    }
+
+    else if (operator === subtract){
+        return subtract(a, b);
+    }
+
+    else if (operator === multiply){
+        return multiply(a, b);
+    }
+
+    else if (operator === divide){
+        return divide(a, b);
+    }
+
+    else if (operator === remainder){
+        return remainder(a, b);
+    }
+
+    else {
+        return "Oh no! Something went wrong!";
+    }
+}
