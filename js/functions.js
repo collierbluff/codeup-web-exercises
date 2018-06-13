@@ -1,6 +1,6 @@
-(function(){
-
 "use strict";
+
+(function(){
 
 /*
  * Create a function called 'sayHello' that takes a parameter 'name'.
@@ -126,7 +126,6 @@ console.log(applyDiscount(39.99, .2).toFixed(2));
 
 })();
 
-"use strict";
 //Simple Function Drills
 
 function returnTwo() {
