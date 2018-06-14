@@ -93,6 +93,10 @@ function analyzeColor(colorName) {
     else if (colorName === "yellow"){
         return "Yellow is pretty cool, it's the color of bananas and school buses";
     }
+
+    else if (colorName === "purple"){
+        return "Purple is pretty cool, It's the color of grapes and violets"
+    }
     else{
         return "I don't know anything about " + colorName;
     }
@@ -122,7 +126,7 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  */
 
 // var colorName = randomColor;
-//
+
 // switch (colorName){
 //     case 'blue':
 //         console.log("Blue is pretty cool, it's the color of the sky and water");
@@ -133,10 +137,12 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
 //     case 'yellow':
 //         console.log("Yellow is pretty cool, it's the color of bananas and school buses");
 //         break;
+//     case 'purple':
+//         console.log("Purple is pretty cool, It's the color of grapes and violets");
+//         break;
 //     default:
 //         console.log("I don't know anything about " + colorName);
 //         break;
-//
 // }
 
 /*
