@@ -18,9 +18,8 @@
 
     var allCones = Math.floor(Math.random() * 50) + 50;
 
-    while (allCones > 0){
-
-        var sold = Math.floor(Math.random() * 5) + 1;
+   do{
+       var sold = Math.floor(Math.random() * 5) + 1;
 
         if(sold > allCones){
 
@@ -29,7 +28,7 @@
         }else {console.log(sold + " Cones sold...");}
 
         allCones -= sold;
-    }
+    } while (allCones > 0);
 
     console.log("Yay! I sold them all!")
 

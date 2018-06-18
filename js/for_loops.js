@@ -9,15 +9,13 @@
 
     function showMultiplicationTable(input) {
 
-        for(var i = 0; i <= 10; i++) {
+        for(var i = 1; i <= 10; i++) {
 
             console.log(input + " x " + i + " = " + (input * i));
     }
 }
 
 showMultiplicationTable(5);
-
-
 
         for(var y = 0; y <= 10; y++){
 
