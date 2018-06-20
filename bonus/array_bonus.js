@@ -7,7 +7,7 @@
 
     var stringARay = sampleString.split("");
 
-    console.log(stringARay);
+    // console.log(stringARay);
 
 
 stringARay.forEach(function (stringChar, index) {
@@ -28,9 +28,18 @@ stringARay.forEach(function (stringChar, index) {
     // console.log(stringARay);
 
 
+function checkStrNum(string) {
+
+    var strAR = string.split("");
+
+    if(strAR.length === parseFloat(strAR[strAR.length - 1])){
+
+        console.log("Yup");
+    }
+}
 
 
-
+checkStrNum("Tests6");
 
 
 
