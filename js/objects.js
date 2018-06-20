@@ -59,9 +59,9 @@
     shoppers.forEach(function (value){
 
         if (value.amount <= 200){
-            console.log(value.amount.toFixed(2));
+            console.log(value.name + " Cost: " + value.amount.toFixed(2));
         }else{
-         console.log((value.amount - (value.amount * .12)).toFixed(2));
+         console.log(value.name + " Discount: " + (value.amount * .12).toFixed(2) +" Cost: "+ (value.amount - (value.amount * .12)).toFixed(2));
         }
     });
 
