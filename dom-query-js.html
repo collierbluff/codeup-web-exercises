@@ -52,27 +52,24 @@
 
         // TODO: Set text color on every other list item to grey
 
+        // TODO: Set text color of li with dbid = 1 to blue
+
+
         for(var i = 0; i < listItems.length; i++) {
 
-            // if (i === 0){listItems[i].style.color = "blue"}
-            if(i % 2 !== 0){
+            if (listItems[i].getAttribute("data-dbid") === '1'){listItems[i].style.color = "blue"}
+            else if(i % 2 !== 0){
                 listItems[i].style.color = "grey";
             }
         }
 
-        // TODO: Set text color of li with dbid = 1 to blue
-
-        var liId1 = document.getElementsByTagName("li")[0];
-
-        liId1.style.color = "blue";
-
         // TODO: Uncomment the next line and get all elements with class name sub-paragraph
 
-        var subPara = document.getElementsByClassName('sub-paragraph')[0];
+        var subPara = document.getElementsByClassName('sub-paragraph');
 
         // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
 
-        subPara.innerHTML = "Mission Accomplished!";
+        subPara[0].innerHTML = "Mission Accomplished!";
 
     })();
 
