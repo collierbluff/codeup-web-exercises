@@ -26,7 +26,10 @@
 </p>
 
 <script>
+
     (function() {
+
+
         "use strict";
         // TODO: Uncomment next line and get the main header element by id
         var mainHeader = document.getElementById('main-header');
@@ -51,24 +54,28 @@
 
         for(var i = 0; i < listItems.length; i++) {
 
+            // if (i === 0){listItems[i].style.color = "blue"}
             if(i % 2 !== 0){
                 listItems[i].style.color = "grey";
             }
         }
+
         // TODO: Set text color of li with dbid = 1 to blue
 
-        var id1 = document.;
-        id1.style.color = "blue";
+        var liId1 = document.getElementsByTagName("li")[0];
+
+        liId1.style.color = "blue";
 
         // TODO: Uncomment the next line and get all elements with class name sub-paragraph
 
-        var subParagraphs = document.getElementsByClassName("sub-paragraph");
+        var subPara = document.getElementsByClassName('sub-paragraph')[0];
 
         // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
 
-        subParagraphs.innerHTML = "Mission Accomplished!";
+        subPara.innerHTML = "Mission Accomplished!";
 
     })();
+
 </script>
 </body>
 </html>
