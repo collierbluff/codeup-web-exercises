@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Paired Map exercise</title>
+
+    <style>
+        #map-canvas {
+            height: 800px;
+        }
+
+    .label{ color:#bada22; height: 40px; line-height: 50px; background-color:crimson;}
+
+    </style>
+</head>
+<body>
+
+<div id = "map-canvas"></div>
+
+
+
+<script>
+    "use strict";
+    var marker;
+    function initMap() {
+
+        var mapCanvas = document.getElementById('map-canvas');
+
+        var mapOptions = {
+
+            zoom: 18,
+            center: {
+                lat: 29.426791,
+                lng: -98.48602
+            }
+
+        };
+
+        var map = new google.maps.Map(mapCanvas, mapOptions);
+
+
+    var geocoder = new google.maps.Geocoder();
+    geocoder.geocode({'address':'13766 Francisquito Ave, Baldwin Park, CA, 91706'}, function(result, status) {
+       map.setCenter(result[0].geometry.location);
+    });
+
+    var inAndOut = {lat: 34.0689843, lng: -117.97507359999997};
+
+    var image = {
+        url: 'img/50.jpg',
+        size: new google.maps.Size(50, 50)
+    };
+
+    marker = new google.maps.Marker({
+        map: map,
+        draggable: true,
+        animation: google.maps.Animation.DROP,
+        position: inAndOut,
+        icon: image
+
+
+
+    });
+
+    marker.addListener('click', function(){
+
+        var infowindow = new google.maps.InfoWindow({
+
+            content: "<div class='label'>The Original In N Out!</div>"
+        });
+
+        infowindow.open(map, marker);
+    });
+
+
+
+
+    }
+</script>
+
+<script src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyCxIPbNd4ljI6NdSyP5ugk4XoKDzw2VEZM&callback=initMap" async defer></script>
+</body>
+</html>

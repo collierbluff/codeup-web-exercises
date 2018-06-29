@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <style>
+        #map-canvas {
+
+            height: 500px;
+        }
+
+    </style>
+    <title>Document</title>
+
+</head>
+
+<body>
+
+<div id = "map-canvas"></div>
+
+
+<script>
+
+    function initMap() {
+
+        var mapCanvas = document.getElementById('map-canvas');
+        var mapOptions = {
+
+          zoom: 10,
+          center: {
+              lat: 29.426791,
+              lng: -98.48602
+          }
+        };
+        var map = new google.maps.Map(mapCanvas, mapOptions);
+
+        //geocoding
+
+        var geo = new google.maps.Geocoder();
+        //
+        // geo.geocode({address: "1 UTSA Circle"}, function (response, status) {
+        //
+        // });
+
+    }
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCxIPbNd4ljI6NdSyP5ugk4XoKDzw2VEZM&callback=initMap" async defer>
+
+
+</script>
+
+
+</body>
+</html>

@@ -19,13 +19,9 @@ function titleCase(input){
         input = input.toLowerCase();
         var strArr = input.split(' ');
 
-
-
         for(var i = 0; i < strArr.length; i++){
 
             strArr[i] = strArr[i].charAt(0).toUpperCase() + strArr[i].slice(1);
-
-
     }
 
     return strArr.join(' ');
@@ -34,15 +30,8 @@ function titleCase(input){
 
 function makeObject(input) {
 
-    if (typeof input === 'string'){
+return {[input]: typeof input}
 
-        return {input: "string"};
-    }else if (typeof input === 'number'){
-
-        return {input: "number"};
-    }else if (typeof input === 'boolean'){
-        return {input: "boolean"};
-    }
 }
 
 function anagram(a, b) {
