@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Konami Code</title>
+
+    <style>
+
+        #my-canvas{
+            display:none;
+        }
+
+        button{
+            height: 180px;
+            width: 280px;
+            border-radius: 20%;
+            background-color:#ffd904;
+            color: white;
+            font-size: 30px;
+            float: right;
+        }
+
+
+        h1{
+            font-size: 50px;
+            float: left;
+        }
+
+    </style>
+</head>
+<body>
+<h1>Konami Code</h1>
+
+
+<button id="reset">Reset Button</button>
+
+<canvas id="my-canvas"></canvas>
+
+<script
+        src="https://code.jquery.com/jquery-2.2.4.js"
+        integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+        crossorigin="anonymous"></script>
+
+<script src="js/confetti-js-master/dist/index.min.js"></script>
+
+<script>
+    "use strict";
+
+    var konamiCode = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65];
+    var attemptedCode = [];
+
+    var confettiSettings = { target: 'my-canvas' };
+    var confetti = new ConfettiGenerator(confettiSettings);
+
+    $('#reset').click(function () {
+       attemptedCode.length = 0;
+       console.clear();
+       $('body').css('background-color', 'white');
+       confetti.clear();
+    });
+
+    $(document).keyup(function(event){
+
+        attemptedCode.push(event.keyCode);
+        console.log(event.key);
+
+        if ((attemptedCode).toString() === konamiCode.toString()){
+            console.log("Success!");
+            alert('You have added 30 lives!');
+            $('body').css('background-color', '#FFDEAD');
+            $('#my-canvas').css('display', 'block');
+            confetti.render();
+        }
+
+    });
+
+
+</script>
+</body>
+</html>
