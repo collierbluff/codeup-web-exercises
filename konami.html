@@ -6,7 +6,6 @@
     <style>
 
         #my-canvas{
-            display:none;
             height: 580px;
             width: 100%;
         }
@@ -20,7 +19,6 @@
             font-size: 30px;
             float: right;
         }
-
 
         h1{
             font-size: 50px;
@@ -54,28 +52,37 @@
     var confettiSettings = { target: 'my-canvas' };
     var confetti = new ConfettiGenerator(confettiSettings);
 
-    $('#reset').click(function () {
-       attemptedCode.length = 0;
-       console.clear();
-       $('body').css('background-color', 'white');
-       confetti.clear();
-        $('h1').css('color', 'black');
-        $('#my-canvas').css('display', 'none');
-    });
+    //Key Entry
 
     $(document).keyup(function(event){
 
         attemptedCode.push(event.keyCode);
-        console.log(event.key);
+
+        if(attemptedCode.length > konamiCode.length){
+            attemptedCode.shift();
+        }
 
         if ((attemptedCode).toString() === konamiCode.toString()){
-            console.log("Success!");
+
             alert('You have added 30 lives!');
-            $('body').css('background-color', '#FFDEAD');
-            $('#my-canvas').css('display', 'block');
             confetti.render();
+
             $('h1').css('color', 'red');
+            $('body').css('background-color', '#FFDEAD');
+
         }
+
+        //Reset Button
+
+        $('#reset').click(function () {
+
+            attemptedCode.length = 0;
+            console.clear();
+            confetti.clear();
+
+            $('body').css('background-color', 'white');
+            $('h1').css('color', 'black');
+        });
 
     });
 
