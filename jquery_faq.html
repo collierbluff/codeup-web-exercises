@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FAQ's</title>
+
+    <style>
+
+        .invisible{
+            display: none;
+        }
+
+        button{
+            background-color: #bada55;
+            width: 200px;
+            height: 100px;
+            color: white;
+            font-size: 1em;
+        }
+
+        .highlight{
+            background-color: #bada55;
+        }
+
+        dl{
+            font-size: 30px;
+        }
+
+        dt{
+            margin-left: 5em;
+        }
+    </style>
+</head>
+<body>
+
+<button id="answer">Would You Like Answers?</button>
+
+<dl>
+
+    <dt>Question</dt>
+    <dd class="invisible">Answer</dd>
+
+    <dt>Question</dt>
+    <dd class="invisible">Answer</dd>
+
+    <dt>Question</dt>
+    <dd class="invisible">Answer</dd>
+
+    <dt>Question</dt>
+    <dd class="invisible">Answer</dd>
+
+    <dt>Question</dt>
+    <dd class="invisible">Answer</dd>
+
+    <dt>Question</dt>
+    <dd class="invisible">Answer</dd>
+
+    <dt>Question</dt>
+    <dd class="invisible">Answer</dd>
+
+    <dt>Question</dt>
+    <dd class="invisible">Answer</dd>
+
+    <dt>Question</dt>
+    <dd class="invisible">Answer</dd>
+
+    <dt>Question</dt>
+    <dd class="invisible">Answer</dd>
+
+</dl>
+
+<script
+        src="https://code.jquery.com/jquery-2.2.4.js"
+        integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+        crossorigin="anonymous"></script>
+
+<script>
+
+    $('#answer').click(function () {
+
+        $('dd').toggleClass('invisible');
+
+        if($(this).text() === 'Would You Like Answers?')
+        $(this).text('There are your answers!');
+        else {$(this).text('Would You Like Answers?')}
+    });
+
+    $('dt').click(function () {
+        $(this).toggleClass('highlight');
+    })
+
+</script>
+
+</body>
+</html>
