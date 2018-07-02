@@ -30,17 +30,29 @@
             margin-left: 5em;
             width: 110px;
         }
+
+        ul{
+            font-size: 25px;
+            list-style: none;
+        }
     </style>
 </head>
 <body>
 
 <button id="answer">Would You Like Answers?</button>
 
+<button id="yellow-bg">Would You Like to highlight stuff?</button>
+
+
 <dl>
-
     <!--Empty List for FAQ-->
-
 </dl>
+
+<ul id = 'yellowstone'></ul>
+
+<ul id = 'yosemite'></ul>
+
+<ul id = 'theoR'></ul>
 
 <script
         src="https://code.jquery.com/jquery-2.2.4.js"
@@ -49,53 +61,142 @@
 
 <script>
 
-    //Function to make filler FAQ objects
+    $(function() {
 
-    function padFAQ (array, desiredLength){
+        //Function to make filler FAQ objects
 
-        while(array.length < desiredLength){
+        function padArray(array, desiredLength, filler) {
 
-            array.push({question: 'Question', answer: 'Answer' })
+            while (array.length < desiredLength) {
+
+                array.push(filler)
+            }
         }
-    }
 
-    //Initialize Array
+        //Initialize FAQ Array
 
-    var parks = [];
+        var parks = [];
 
-    padFAQ(parks, 10);
+        padArray(parks, 10, {question: 'Question', answer: 'Answer'});
 
-    //Render Array
+        //Render FAQ Array
 
-    var html = '';
+        var html = '';
 
-    parks.forEach(function (park, index) {
+        parks.forEach(function (park, index) {
             html += '<dt>' + parks[index].question + '</dt>' +
                 '<dd class = \'invisible\'>' + parks[index].answer + '</dd>';
         });
 
-    $('dl').html(html);
+        $('dl').html(html);
 
-    //Toggle Answer Button
+        //Initialize Yellowstone Array
 
-    $('#answer').click(function () {
+        var yellowstone = [{fact: 'Yellowstone National Park'}];
 
-        $('dd').toggleClass('invisible');
+        padArray(yellowstone, 5, {fact: 'Yellowstone fact?'});
 
-        if($(this).text() === 'Would You Like Answers?') {
+        //Render Yellowstone Array
 
-            $(this).text('There are your answers!');
-        }
+        html = "";
 
-        else {$(this).text('Would You Like Answers?')}
-    });
+        yellowstone.forEach(function (object, index) {
+            if(index === 0){
+                html += '<h3><li>' + object.fact + '</li></h3>'
 
-    //Toggles Highlight Color
+            }
+            else{html += '<li>' + object.fact + '</li>';}
+        });
 
-    $('dt').click(function () {
-        $(this).toggleClass('highlight');
-    })
+        $('#yellowstone').html(html);
 
+        //Initialize Yosemite Array
+
+        var yosemite = [{fact: 'Yosemite National Park'}];
+
+        padArray(yosemite, 5, {fact: 'Yosemite fact?'});
+
+        //Render Yosemite Array
+
+        html = "";
+
+        yosemite.forEach(function (object, index) {
+            if(index === 0){
+                html += '<h3><li>' + object.fact + '</li></h3>'
+
+            }
+            else{html += '<li>' + object.fact + '</li>';}
+        });
+
+        $('#yosemite').html(html);
+
+        //Initialize Theodore Roosevelt Array
+
+        var theoR = [{fact: 'Theodore Roosevelt National Park'}];
+
+        padArray(theoR, 5, {fact: 'Theodore Roosevelt fact?'});
+
+        //Render Theodore Roosevelt Array
+
+        html = "";
+
+        theoR.forEach(function (object, index) {
+            if(index === 0){
+                html += '<h3><li>' + object.fact + '</li></h3>'
+
+            }
+            else{html += '<li>' + object.fact + '</li>';}
+        });
+
+        $('#theoR').html(html);
+
+        //Toggle Answer Button
+
+        $('#answer').click(function () {
+
+            $('dd').toggleClass('invisible');
+
+            if ($(this).text() === 'Would You Like Answers?') {
+
+                $(this).text('There are your answers!');
+            }
+
+            else {
+                $(this).text('Would You Like Answers?')
+            }
+        });
+
+        //Yellow Highlight Button
+
+        $('#yellow-bg').click(function () {
+
+            $('#yellowstone').children().last().css('background-color', 'yellow');
+            $('#yosemite').children().last().css('background-color', 'yellow');
+            $('#theoR').children().last().css('background-color', 'yellow');
+
+        });
+
+        //Make h3s add bold to li's
+
+        $('h3').click(function () {
+
+            $(this).parent().children().next().css('font-weight', 'bold');
+        });
+
+        //make li's turn li's blue
+
+        $('li').click(function () {
+
+            $(this).parent().children().first().next().css('color', 'blue');
+        });
+
+        //Toggles DT Highlight Color
+
+        $('dt').click(function () {
+            $(this).toggleClass('highlight');
+        })
+
+    })();
 </script>
 
 </body>
