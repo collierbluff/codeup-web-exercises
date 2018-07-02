@@ -28,6 +28,7 @@
 
         dt{
             margin-left: 5em;
+            width: 110px;
         }
     </style>
 </head>
@@ -37,35 +38,7 @@
 
 <dl>
 
-    <dt>Question</dt>
-    <dd class="invisible">Answer</dd>
-
-    <dt>Question</dt>
-    <dd class="invisible">Answer</dd>
-
-    <dt>Question</dt>
-    <dd class="invisible">Answer</dd>
-
-    <dt>Question</dt>
-    <dd class="invisible">Answer</dd>
-
-    <dt>Question</dt>
-    <dd class="invisible">Answer</dd>
-
-    <dt>Question</dt>
-    <dd class="invisible">Answer</dd>
-
-    <dt>Question</dt>
-    <dd class="invisible">Answer</dd>
-
-    <dt>Question</dt>
-    <dd class="invisible">Answer</dd>
-
-    <dt>Question</dt>
-    <dd class="invisible">Answer</dd>
-
-    <dt>Question</dt>
-    <dd class="invisible">Answer</dd>
+    <!--Empty List for FAQ-->
 
 </dl>
 
@@ -76,14 +49,48 @@
 
 <script>
 
+    //Function to make filler FAQ objects
+
+    function padFAQ (array, desiredLength){
+
+        while(array.length < desiredLength){
+
+            array.push({question: 'Question', answer: 'Answer' })
+        }
+    }
+
+    //Initialize Array
+
+    var parks = [];
+
+    padFAQ(parks, 10);
+
+    //Render Array
+
+    var html = '';
+
+    parks.forEach(function (park, index) {
+            html += '<dt>' + parks[index].question + '</dt>' +
+                '<dd class = \'invisible\'>' + parks[index].answer + '</dd>';
+        });
+
+    $('dl').html(html);
+
+    //Toggle Answer Button
+
     $('#answer').click(function () {
 
         $('dd').toggleClass('invisible');
 
-        if($(this).text() === 'Would You Like Answers?')
-        $(this).text('There are your answers!');
+        if($(this).text() === 'Would You Like Answers?') {
+
+            $(this).text('There are your answers!');
+        }
+
         else {$(this).text('Would You Like Answers?')}
     });
+
+    //Toggles Highlight Color
 
     $('dt').click(function () {
         $(this).toggleClass('highlight');
