@@ -1,0 +1,54 @@
+.invisible{
+    display: none;
+}
+
+body{
+    background-color: antiquewhite;
+}
+
+button{
+    background-color: #bada55;
+    width: 200px;
+    height: 100px;
+    color: white;
+    font-size: 1em;
+}
+
+.highlight{
+    background-color: #bada55;
+}
+
+dl{
+    font-size: 29px;
+    float: left;
+}
+
+dt{
+    margin-left: 5em;
+    width: 110px;
+}
+
+ul{
+    font-size: 25px;
+    list-style: none;
+}
+
+div{
+    float: left;
+}
+
+.lists{
+    float: right;
+}
+
+.bold{
+    font-weight: bold;
+}
+
+.blue{
+    color: blue;
+}
+
+li{
+    width: 100%;
+}
