@@ -2,10 +2,6 @@ body{
     background-color: antiquewhite;
 }
 
-#container{
-    width: 100%;
-}
-
 button{
     background-color: #bada55;
     width: 200px;
@@ -72,4 +68,8 @@ ul{
     text-align: center;
     line-height: 60px;
     float: right;
+}
+
+h2{
+    clear: both;
 }

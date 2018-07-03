@@ -147,7 +147,6 @@
     //Make h3s reappear li's and bold them
 
     $('h3').click(function () {
-
         $(this).parent().children().toggleClass('bold').slideDown();
     });
 
