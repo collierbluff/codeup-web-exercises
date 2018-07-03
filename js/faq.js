@@ -1,5 +1,5 @@
 
-$(function() {
+(function() {
 
     //Function to fill arrays
 
@@ -119,14 +119,6 @@ $(function() {
         }
 
     });
-
-    //Make h3s add bold to li's
-
-    $('h3').click(function () {
-
-        $(this).parent().children().toggleClass('bold');
-    });
-
     //make li's turn li's blue
 
     $('li').click(function () {
@@ -138,6 +130,36 @@ $(function() {
 
     $('dt').click(function () {
         $(this).toggleClass('highlight').css('clear', 'both').css('float', 'left');
-    })
+    });
+
+    //Close Pop-up
+
+    $('#cancel').click(function () {
+       $('#pop-up').first().hide();
+    });
+
+    //Hide li's to start
+
+    $('ul').each(function () {
+        $(this).children().next().hide();
+    });
+
+    //Make h3s reappear li's and bold them
+
+    $('h3').click(function () {
+
+        $(this).parent().children().toggleClass('bold').slideDown();
+    });
+
+    //Hide h2 to start
+
+    $('h2').hide();
+
+    //Make the h2 appear after 8 seconds
+
+    window.setTimeout(function () {
+        $('h2').fadeIn();
+    }, 8000)
+
 
 })();

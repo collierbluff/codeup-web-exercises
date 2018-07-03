@@ -2,12 +2,19 @@ body{
     background-color: antiquewhite;
 }
 
+#container{
+    width: 100%;
+}
+
 button{
     background-color: #bada55;
     width: 200px;
     height: 100px;
     color: white;
     font-size: 1em;
+    clear: both;
+    float: left;
+    margin-bottom: 1em;
 }
 
 dl{
@@ -25,13 +32,8 @@ ul{
     list-style: none;
 }
 
-div{
-    float: left;
-}
-
 .lists{
     float: right;
-    margin-right: 70px;
 }
 
 
@@ -53,4 +55,21 @@ div{
 
 .blue{
     color: blue;
+}
+
+/*Pop-up*/
+
+#pop-up h1{
+    float: left;
+}
+
+#pop-up span{
+    background-color: white;
+    color: red;
+    font-size: 50px;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    line-height: 60px;
+    float: right;
 }
