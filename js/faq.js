@@ -1,7 +1,7 @@
 
 $(function() {
 
-    //Function to make filler FAQ objects
+    //Function to fill arrays
 
     function padArray(array, desiredLength, filler) {
 
@@ -11,7 +11,7 @@ $(function() {
         }
     }
 
-    //Initialize FAQ Array
+    //Initialize FAQ Array and fill it
 
     var parks = [];
 
@@ -28,7 +28,7 @@ $(function() {
 
     $('dl').html(html);
 
-    //Initialize Yellowstone Array
+    //Initialize Yellowstone Array and fill it
 
     var yellowstone = [{fact: 'Yellowstone National Park'}];
 
@@ -47,7 +47,7 @@ $(function() {
 
     $('#yellowstone').html(html);
 
-    //Initialize Yosemite Array
+    //Initialize Yosemite Array and fill it
 
     var yosemite = [{fact: 'Yosemite National Park'}];
 
@@ -66,7 +66,7 @@ $(function() {
 
     $('#yosemite').html(html);
 
-    //Initialize Theodore Roosevelt Array
+    //Initialize Theodore Roosevelt Array and fill it
 
     var theoR = [{fact: 'Theodore Roosevelt National Park'}];
 
@@ -101,17 +101,17 @@ $(function() {
         }
     });
 
-    //Yellow Highlight Toggle Button
+    //Highlight Toggle Button
 
-    $('#yellow-bg').click(function () {
+    $('#highlight-bg').click(function () {
 
-        $('#yellowstone').children().last().toggleClass('highlight').css('display', 'inline');
-        $('#yosemite').children().last().toggleClass('highlight').css('display', 'inline');
-        $('#theoR').children().last().toggleClass('highlight').css('display', 'inline');
+        $('ul').each(function () {
+            $(this).children().last().toggleClass('highlight');
+        });
 
         if ($(this).text() === 'Highlighter') {
 
-            $(this).text('Undo that Highlight');
+            $(this).text('Undo that Highlight!');
         }
 
         else {
@@ -124,7 +124,7 @@ $(function() {
 
     $('h3').click(function () {
 
-        $(this).parent().children().next().toggleClass('bold');
+        $(this).parent().children().toggleClass('bold');
     });
 
     //make li's turn li's blue
@@ -137,7 +137,7 @@ $(function() {
     //Toggles DT Highlight Color
 
     $('dt').click(function () {
-        $(this).toggleClass('highlight');
+        $(this).toggleClass('highlight').css('clear', 'both').css('float', 'left');
     })
 
 })();
