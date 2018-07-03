@@ -5,9 +5,12 @@
     <title>FAQ's</title>
 
     <style>
-
         .invisible{
             display: none;
+        }
+
+        body{
+            background-color: antiquewhite;
         }
 
         button{
@@ -23,7 +26,8 @@
         }
 
         dl{
-            font-size: 30px;
+            font-size: 29px;
+            float: left;
         }
 
         dt{
@@ -35,24 +39,50 @@
             font-size: 25px;
             list-style: none;
         }
+
+        div{
+            float: left;
+        }
+
+        .lists{
+            float: right;
+        }
+
+        .bold{
+            font-weight: bold;
+        }
+
+        .blue{
+            color: blue;
+        }
+
+        li{
+            width: 100%;
+        }
+
     </style>
 </head>
 <body>
 
+<div>
 <button id="answer">Would You Like Answers?</button>
-
-<button id="yellow-bg">Would You Like to highlight stuff?</button>
-
+<br><br>
+<button id="yellow-bg">Highlighter</button>
+</div>
 
 <dl>
     <!--Empty List for FAQ-->
 </dl>
 
+<div class="lists">
+
+    <!--Empty Lists for Park Facts-->
+
 <ul id = 'yellowstone'></ul>
-
 <ul id = 'yosemite'></ul>
-
 <ul id = 'theoR'></ul>
+
+</div>
 
 <script
         src="https://code.jquery.com/jquery-2.2.4.js"
@@ -104,8 +134,7 @@
             if(index === 0){
                 html += '<h3><li>' + object.fact + '</li></h3>'
 
-            }
-            else{html += '<li>' + object.fact + '</li>';}
+            }else{html += '<li>' + object.fact + '</li>';}
         });
 
         $('#yellowstone').html(html);
@@ -124,8 +153,7 @@
             if(index === 0){
                 html += '<h3><li>' + object.fact + '</li></h3>'
 
-            }
-            else{html += '<li>' + object.fact + '</li>';}
+            }else{html += '<li>' + object.fact + '</li>';}
         });
 
         $('#yosemite').html(html);
@@ -144,8 +172,7 @@
             if(index === 0){
                 html += '<h3><li>' + object.fact + '</li></h3>'
 
-            }
-            else{html += '<li>' + object.fact + '</li>';}
+            }else{html += '<li>' + object.fact + '</li>';}
         });
 
         $('#theoR').html(html);
@@ -166,13 +193,22 @@
             }
         });
 
-        //Yellow Highlight Button
+        //Yellow Highlight Toggle Button
 
         $('#yellow-bg').click(function () {
 
-            $('#yellowstone').children().last().css('background-color', 'yellow');
-            $('#yosemite').children().last().css('background-color', 'yellow');
-            $('#theoR').children().last().css('background-color', 'yellow');
+            $('#yellowstone').children().last().toggleClass('highlight').css('display', 'inline');
+            $('#yosemite').children().last().toggleClass('highlight').css('display', 'inline');
+            $('#theoR').children().last().toggleClass('highlight').css('display', 'inline');
+
+            if ($(this).text() === 'Highlighter') {
+
+                $(this).text('Undo that Highlight');
+            }
+
+            else {
+                $(this).text('Highlighter')
+            }
 
         });
 
@@ -180,14 +216,14 @@
 
         $('h3').click(function () {
 
-            $(this).parent().children().next().css('font-weight', 'bold');
+            $(this).parent().children().next().toggleClass('bold');
         });
 
         //make li's turn li's blue
 
         $('li').click(function () {
 
-            $(this).parent().children().first().next().css('color', 'blue');
+            $(this).parent().children().first().next().toggleClass('blue');
         });
 
         //Toggles DT Highlight Color
