@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog</title>
+    <style>
+        body{
+            background-color: papayawhip;
+        }
+        p{
+            margin: 1em;
+            font-size: larger;
+        }
+        h4{
+            margin:2em;
+        }
+    </style>
+</head>
+<body>
+
+<div id="posts"></div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+<script>
+    "use strict";
+
+    $.ajax('data/blog.json').done(function (data) {
+
+        $('#posts').html('');
+
+        data.forEach(function (ele) {
+
+            $('#posts').append(
+                '<h2>' + ele.title + '</h2>' +
+                '<p>' + ele.content + '</p>' +
+                '<h4>' + 'Date: ' + ele.date +
+                '<span style="float: right">' + 'Categories: ' + ele.categories.join(', ') +
+                '</span>' +'</h4>')
+        })
+
+        })
+
+
+
+
+
+</script>
+
+</body>
+</html>
