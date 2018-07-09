@@ -19,7 +19,7 @@ $(document).ready(function(){
 
     $('#add-names-btn').click(function () {
 
-        if($('#names-list').html() === '') {
+        $('#names-list').html('');
             people.forEach(function (ele) {
 
                 $('#names-list').append('<li>' + ele.name + '</li>');
@@ -30,7 +30,6 @@ $(document).ready(function(){
                 $(this).css('color', people[index].favColor);
             })
 
-        }else{console.log('You Already Printed This Array!')};
     });
 
 
