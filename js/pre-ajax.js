@@ -22,13 +22,9 @@ $(document).ready(function(){
         $('#names-list').html('');
             people.forEach(function (ele) {
 
-                $('#names-list').append('<li>' + ele.name + '</li>');
+                $('#names-list').append('<li style = "color: ' + ele.favColor + '">' + ele.name + '</li>');
 
             });
-
-            $('li').each(function (index) {
-                $(this).css('color', people[index].favColor);
-            })
 
     });
 
