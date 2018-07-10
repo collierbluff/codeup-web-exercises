@@ -1,0 +1,12 @@
+#container{
+    background-color: #c0ffee;
+    width: 80%;
+    margin: auto;
+} .forecast{
+    background-color: lightgrey;
+    width: calc(33% - 33px);
+    float: left;
+    border: black solid 1px;
+    padding: 1em;
+    text-align: center;
+  }
