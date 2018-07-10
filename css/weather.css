@@ -1,17 +1,36 @@
 #container{
     background-color: #c0ffee;
-    width: 80%;
+    width: 90%;
     margin: auto;
-    height: 300px;
     padding: 1em;
-} .forecast{
+}
+.forecast{
     background-color: lightgrey;
     width: calc(33% - 33px);
     float: left;
     border: black solid 1px;
     padding: 1em;
     text-align: center;
-  }img{
-    width: 50px;
+}
+img{
+    width: 100px;
     margin-bottom: 1em;
-     }
+}
+input{
+    margin: 2em;
+}
+button{
+    width: 150px;
+    height: 50px;
+    color: white;
+    background-color: darkblue;
+}
+#latLongSearch{
+    width: 30%;
+    margin-left: 3em;
+}
+#map-canvas{
+    height: 500px;
+    width: 100%;
+    margin-top: 1em;
+}

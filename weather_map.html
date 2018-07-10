@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0">
     <title>Weather API</title>
     <link rel="stylesheet" href="css/weather.css">
 </head>
@@ -10,16 +11,33 @@
 <div id="container">
     <h2>Weather Application</h2>
 
-    <h4 id="cityName">San Antonio</h4>
+    <h3 id="cityName"></h3>
 
     <div id="today" class="forecast"></div>
     <div id="tomorrow" class="forecast"></div>
     <div id="threeDay" class="forecast"></div>
 
+    <footer>
+    <label for="lat">Latitude</label>
+    <input id="lat" type="text">
+
+    <label for="long">Longitude</label>
+    <input id="long" type="text">
+
+    <button id="latLongSearchBtn">New City</button>
+    </footer>
+
+    <div id="map-canvas"></div>
 </div>
 
+<!--JQuery-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+<!--Custom JS-->
 <script src="js/weather.js"></script>
+
+<!--Google Maps-->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCxIPbNd4ljI6NdSyP5ugk4XoKDzw2VEZM&callback=initMap" async defer></script>
 
 </body>
 </html>
