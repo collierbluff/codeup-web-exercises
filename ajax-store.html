@@ -23,15 +23,15 @@
 
 <h1>My Tool Store</h1>
 
-<table id="products">
-    <thead>
+<table>
+
         <tr>
             <th>Title</th>
             <th>Quantity</th>
             <th>Price</th>
             <th>Categories</th>
         </tr>
-    </thead>
+
     <tbody id="insertProducts"></tbody>
 </table>
 
@@ -42,34 +42,26 @@
 <script>
 (function() {
     "use strict";
-    // TODO: Create an ajax GET request for /data/inventory.json
 
-    // TODO: Take the data from inventory.json and append it to the products table
-    //       HINT: Your data should come back as a JSON object; use console.log() to inspect
-    //             its contents and fields
-    //       HINT: You will want to target #insertProducts for your new HTML elements
-
-    function tableRefresh(){ $.ajax('data/inventory.json').done(function (data) {
+    function tableRender(){ $.ajax('data/inventory.json').done(function (inventory) {
 
         $('#insertProducts').html('');
 
-        data.forEach(function (element) {
+        inventory.forEach(function (item) {
             $('#insertProducts')
                 .append(
                         '<tr>' +
-                            '<td>' + element.title + '</td>' +
-                            '<td>' + element.quantity + '</td>' +
-                            '<td>' + element.price + '</td>' +
-                            '<td>' + element.categories.join(',<br>') + '</td>' +
+                            '<td>' + item.title + '</td>' +
+                            '<td>' + item.quantity + '</td>' +
+                            '<td>' + item.price + '</td>' +
+                            '<td>' + item.categories.join(',<br>') + '</td>' +
                         '</tr>');
         })
     })}
 
-    tableRefresh();
+    tableRender();
 
-    $('#refresh').click(tableRefresh);
-
-
+    $('#refresh').click(tableRender);
 
 })();
 </script>
