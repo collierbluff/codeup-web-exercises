@@ -2,6 +2,8 @@
     background-color: #c0ffee;
     width: 80%;
     margin: auto;
+    height: 300px;
+    padding: 1em;
 } .forecast{
     background-color: lightgrey;
     width: calc(33% - 33px);
@@ -9,4 +11,7 @@
     border: black solid 1px;
     padding: 1em;
     text-align: center;
-  }
+  }img{
+    width: 50px;
+    margin-bottom: 1em;
+     }
