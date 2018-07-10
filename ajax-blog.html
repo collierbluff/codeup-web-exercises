@@ -4,14 +4,13 @@
     <meta charset="UTF-8">
     <title>Blog</title>
     <style>
-        body{
+        body {
             background-color: papayawhip;
         }
-        p{
-            margin: 1em;
-            font-size: larger;
+        p {
+            margin: 1em;font-size: larger;
         }
-        h4{
+        h4 {
             margin:2em;
         }
     </style>
@@ -25,25 +24,20 @@
 <script>
     "use strict";
 
-    $.ajax('data/blog.json').done(function (data) {
+    $.ajax('data/blog.json').done(function (posts) {
 
-        $('#posts').html('');
-
-        data.forEach(function (ele) {
+        posts.forEach(function (post) {
 
             $('#posts').append(
-                '<h2>' + ele.title + '</h2>' +
-                '<p>' + ele.content + '</p>' +
-                '<h4>' + 'Date: ' + ele.date +
-                '<span style="float: right">' + 'Categories: ' + ele.categories.join(', ') +
+                '<h2>' + post.title + '</h2>' +
+                '<p>' + post.content + '</p>' +
+                '<h4>' + 'Date: ' + post.date +
+                '<span style="float: right">' +
+                'Categories: ' + post.categories.join(', ') +
                 '</span>' +'</h4>')
         })
 
         })
-
-
-
-
 
 </script>
 
