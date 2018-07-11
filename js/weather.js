@@ -75,12 +75,12 @@ var lat = 29.4241;
 var long = -98.4937;
 
 latLongSearch(lat, long);
-//Initialize Google Map with marker
+//Initialize Google Map with marker and various event listeners
 
     function initMap() {
 
         var mapOptions={
-            zoom: 6,
+            zoom: 9,
             center: {
                 lat: lat,
                 lng: long
@@ -94,28 +94,65 @@ latLongSearch(lat, long);
             position: {lat: lat, lng: long}
         });
 
+        var geocoder = new google.maps.Geocoder();
+
         //Marker listener, updates weather from new marker position
 
         marker.addListener('dragend', function () {
             latLongSearch(marker.getPosition().lat(), marker.getPosition().lng());
 
-            //Scroll to top of page
+            //Scroll up to forecast panels
 
             var yPos = window.pageYOffset;
             var interval = setInterval(function () {
-                if(yPos > 85){
+                if(yPos > 220){
                 window.scrollTo(0, yPos);
                 yPos-=4;
-                if(yPos <= 85){
+                if(yPos <= 220){
                     clearInterval(interval);
                 }}
             }, 1);
 
 
-        })
+        });
+
+        function onGeocode(result){
+
+                var location = result[0].geometry.location;
+
+                //Move map and marker to new coordinates
+
+                map.setCenter(location);
+                map.setZoom(9);
+                marker.setPosition({lat: location.lat(), lng: location.lng()});
+
+                //renders forecast panels with new city
+
+                latLongSearch(location.lat(), location.lng());
+        }
+
+        //Geocode event listener (Runs off of the enter key)
+
+        $('#citySearch').keypress(function (e) {
+
+            if(e.charCode === 13){
+            geocoder.geocode({'address': $('#citySearch').val()}, onGeocode);
+
+            //Scroll down a little
+
+            var yPos = window.pageYOffset;
+            var interval = setInterval(function () {
+                if(yPos < 220){
+                    window.scrollTo(0, yPos);
+                    yPos+=4;
+                    if(yPos >= 220){
+                        clearInterval(interval);
+                    }}
+            }, 1);
+            }
+        });
+
+
     }
-
-
-
 
 
