@@ -1,4 +1,4 @@
-//Converts String to title case
+//Converts a string to title case
 
 function titleCase(input) {
 
@@ -11,15 +11,15 @@ function titleCase(input) {
     return strArr.join(' ');
 }
 
-//Fill the forecast panels with the appropriate weather data
+//Fills the forecast panels with the appropriate weather data
 
 function populateWeather(weatherData){
 
-        //Make header match City Name
+        //Make header match current city name
 
         $('#cityName').text(weatherData.city.name);
 
-        //Grab three days of Data
+        //Grabs three days of data from weather api and pushes to htmlHolder array with formatting
 
         var i = 0;
         var htmlHolder = [];
@@ -75,7 +75,8 @@ var lat = 29.4241;
 var long = -98.4937;
 
 latLongSearch(lat, long);
-//Initialize Google Map with marker and various event listeners
+
+//Initialize Google Map with marker, geocoder, and various event listeners
 
     function initMap() {
 
@@ -115,6 +116,8 @@ latLongSearch(lat, long);
 
 
         });
+
+        //Function to run with geocoder
 
         function onGeocode(result){
 
