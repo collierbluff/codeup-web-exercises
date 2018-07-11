@@ -1,5 +1,6 @@
 body{
     background-image: url("../img/weather-bg.jpg");
+    background-size: cover;
 }
 input{
     width: 400px;
