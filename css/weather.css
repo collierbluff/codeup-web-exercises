@@ -1,8 +1,15 @@
+body{
+    background-image: url("../img/weather-bg.jpg");
+}
 #container{
-    background-color: #c0ffee;
+    background-color: rgba(150,200,255, .7);
     width: 90%;
     margin: auto;
     padding: 1em;
+}
+#cityName{
+    text-align: center;
+    font-size: 2em;
 }
 .forecast{
     background-color: lightgrey;
@@ -11,26 +18,13 @@
     border: black solid 1px;
     padding: 1em;
     text-align: center;
+    margin-bottom: 3em;
 }
 img{
     width: 100px;
     margin-bottom: 1em;
 }
-input{
-    margin: 2em;
-}
-button{
-    width: 150px;
-    height: 50px;
-    color: white;
-    background-color: darkblue;
-}
-#latLongSearch{
-    width: 30%;
-    margin-left: 3em;
-}
 #map-canvas{
     height: 500px;
-    width: 100%;
-    margin-top: 1em;
+    border: solid grey 5px;
 }

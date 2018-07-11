@@ -26,12 +26,11 @@ function populateWeather(weatherData){
         var i = 0;
         var htmlHolder = [];
         while(i <= 16){
-            var html = '<h3 class="temp">';
 
             //Temperature
-
+            var html = '<h2 class="temp">';
             html += weatherData.list[i].main.temp_max.toFixed(1)+ '&#176 F' + ' / '
-                + weatherData.list[i].main.temp_min.toFixed(1)+ '&#176 F' + '</h3>';
+                + weatherData.list[i].main.temp_min.toFixed(1)+ '&#176 F' + '</h2>';
 
             //Default Icon Set with one exception
 
@@ -53,11 +52,11 @@ function populateWeather(weatherData){
             i++;
         }
 
-        //Render
+        //Fills forecast panels
 
         $('#today').html(htmlHolder[0] + '<h3>Today</h3>');
         $('#tomorrow').html(htmlHolder[8] + '<h3>Tomorrow</h3>');
-        $('#threeDay').html(htmlHolder[16] + '<h3>Day Three</h3>');
+        $('#threeDay').html(htmlHolder[16] + '<h3>Overmorrow</h3>');
 
 }
 
@@ -65,18 +64,7 @@ function populateWeather(weatherData){
 
 $.ajax("http://api.openweathermap.org/data/2.5/forecast?appid=9b5be99373201bec63106efe33259a14&id=4726206&units=imperial").done(populateWeather);
 
-var lat = 29.4241;
-var long = -98.4937;
-
-$('#lat').keyup(function () {
-    lat = $('#lat').val();
-});
-
-$('#long').keyup(function () {
-    long = $('#long').val();
-});
-
-//Latitude and Longitude Search Button
+//Function takes a latitude and longitude, updates forecast panels
 
 function latLongSearch(lat, long){
 
@@ -87,11 +75,12 @@ function latLongSearch(lat, long){
     ).done(populateWeather);
 }
 
-$('#latLongSearchBtn').click(latLongSearch(lat, long));
+//Initial Coordinates for Google Map (San Antonio)
 
-//Google Map integration
+var lat = 29.4241;
+var long = -98.4937;
 
-
+//Initialize Google Map with marker
 
     function initMap() {
 
@@ -110,11 +99,24 @@ $('#latLongSearchBtn').click(latLongSearch(lat, long));
             position: {lat: lat, lng: long}
         });
 
-        marker.addListener('dragend', function () {
-            lat = marker.getPosition().lat();
-            long = marker.getPosition().lng();
+        //Marker listener, updates weather from new marker position
 
-            latLongSearch(lat, long);
+        marker.addListener('dragend', function () {
+            latLongSearch(marker.getPosition().lat(), marker.getPosition().lng());
+
+            //Scroll to top of page
+
+            var yPos = window.pageYOffset;
+            var interval = setInterval(function () {
+                if(yPos > 85){
+                window.scrollTo(0, yPos);
+                yPos-=5;
+                if(yPos <= 85){
+                    clearInterval(interval);
+                }}
+            }, 1);
+
+
         })
     }
 
