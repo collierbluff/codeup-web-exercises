@@ -6,11 +6,9 @@ function titleCase(input) {
     var strArr = input.split(' ');
 
     for (var i = 0; i < strArr.length; i++) {
-
         strArr[i] = strArr[i].charAt(0).toUpperCase() + strArr[i].slice(1);
     }
     return strArr.join(' ');
-
 }
 
 //Fill the forecast panels with the appropriate weather data
@@ -43,9 +41,9 @@ function populateWeather(weatherData){
             //Other Conditions
 
             html += '<br><strong>Conditions: </strong>' + titleCase(weatherData.list[i].weather[0].description);
-            html += '<br><strong>Humidity: </strong>' + weatherData.list[i].main.humidity;
-            html += '<br><strong>Wind Speed: </strong>' + weatherData.list[i].wind.speed;
-            html += '<br><strong>Pressure: </strong>' + weatherData.list[i].main.pressure;
+            html += '<br><strong>Humidity: </strong>' + weatherData.list[i].main.humidity + ' %';
+            html += '<br><strong>Wind Speed: </strong>' + weatherData.list[i].wind.speed.toFixed(0) + ' mph';
+            html += '<br><strong>Pressure: </strong>' + weatherData.list[i].main.pressure + ' mbar';
 
             htmlHolder.push(html);
 
@@ -60,10 +58,6 @@ function populateWeather(weatherData){
 
 }
 
-//Initial Weather Render (San Antonio)
-
-$.ajax("http://api.openweathermap.org/data/2.5/forecast?appid=9b5be99373201bec63106efe33259a14&id=4726206&units=imperial").done(populateWeather);
-
 //Function takes a latitude and longitude, updates forecast panels
 
 function latLongSearch(lat, long){
@@ -75,11 +69,12 @@ function latLongSearch(lat, long){
     ).done(populateWeather);
 }
 
-//Initial Coordinates for Google Map (San Antonio)
+//Initial Lat/Long declaration and forecast panel render (San Antonio)
 
 var lat = 29.4241;
 var long = -98.4937;
 
+latLongSearch(lat, long);
 //Initialize Google Map with marker
 
     function initMap() {
@@ -110,7 +105,7 @@ var long = -98.4937;
             var interval = setInterval(function () {
                 if(yPos > 85){
                 window.scrollTo(0, yPos);
-                yPos-=5;
+                yPos-=4;
                 if(yPos <= 85){
                     clearInterval(interval);
                 }}
