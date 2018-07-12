@@ -41,7 +41,7 @@ function findDay(modifier) {
 function scrollForBestView() {
 
     let yPos = window.pageYOffset;
-    let desiredY = 220;
+    let desiredY = 205;
     let moveSpeed = 5;
 
     //Speeds up scroll if screen is small
