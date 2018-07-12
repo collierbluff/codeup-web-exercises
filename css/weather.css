@@ -2,42 +2,39 @@ body{
     background-image: url("../img/weather-bg.jpg");
     background-size: cover;
 }
-input{
-    width: 400px;
-    font-size: 1.5em;
+.container{
+    background-color: rgba(150,200,255, .7);
+    padding: 1em;
 }
-label{
-    display: inline-block;
-    margin-right: 2em;
-    font-size: 1.5em;
+
+h3{
+    font-size: 2em;
+    text-align: center;
+}
+h2{
+    text-align: center;
+    margin: 1em;
+}
+
+/*Forecasts*/
+
+#forecastRow{
+    padding-left: 1em;
+    padding-right: 1em;
+}
+.forecast{
+    background-color: lightgrey;
+    border: black solid 1px;
+    padding: 1em;
+    text-align: center;
 }
 img{
     height: 100px;
 }
-#container{
-    background-color: rgba(150,200,255, .7);
-    width: 90%;
-    margin: auto;
-    padding: 1em;
-}
-#cityName{
-    text-align: center;
-    font-size: 2em;
-}
+
+/*Google Maps*/
 #map-canvas{
     height: 500px;
     border: solid grey 5px;
 }
-.forecast{
-    background-color: lightgrey;
-    width: calc(33% - 33px);
-    float: left;
-    border: black solid 1px;
-    padding: 1em;
-    text-align: center;
-    margin-bottom: 3em;
-}
-
-
-
 

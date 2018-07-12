@@ -11,15 +11,80 @@ function titleCase(input) {
     return strArr.join(' ');
 }
 
-//Fills the forecast panels with the appropriate weather data
+//Takes browsers day index and returns string of day, can take a modifier number to traverse week
 
+function findDay(modifier) {
+
+    var daysOfTheWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+    //Provides a default modifier for empty function calls
+    if(typeof modifier !== 'number'){
+        modifier = 0;
+    }
+
+    var dayIndex = new Date().getDay();
+    var desiredDay = dayIndex + modifier;
+
+    //If modifier would push us out of week array, treat as a different week
+    while((desiredDay) > 6){
+        desiredDay -= 7;
+    }
+    while ((desiredDay < 0)){
+        desiredDay += 7;
+    }
+
+    return daysOfTheWeek[desiredDay];
+}
+
+//Function to scroll to ideal viewing Y value
+
+function scrollForBestView() {
+
+    var yPos = window.pageYOffset;
+    var desiredY = 210;
+    var moveSpeed = 5;
+
+    //Speeds up scroll if screen is small
+
+    if((window.matchMedia("(max-width: 720px)")).matches){
+        moveSpeed = 15;
+    }
+
+    var interval = setInterval(function () {
+        //If too low
+        if(yPos < desiredY){
+            window.scrollTo(0, yPos);
+            yPos += moveSpeed;
+
+            if(yPos >= desiredY){
+                clearInterval(interval);
+            }}
+        //If too high
+        else if(yPos > desiredY){
+            window.scrollTo(0, yPos);
+            yPos -= moveSpeed;
+            if(yPos <= desiredY){
+                clearInterval(interval);
+            }}
+
+            }, 1);
+}
+
+//Fills the forecast panels with the appropriate weather data
+//todo: animate render
 function populateWeather(weatherData){
+
+        //Clear Search Bar Text
+
+        $('#citySearch').val('');
 
         //Make header match current city name
 
         $('#cityName').text(weatherData.city.name);
 
-        //Grabs three days of data from weather api and pushes to htmlHolder array with formatting
+
+
+        //Grabs three days of data from the weather api (Three hour intervals) and pushes to array with formatting
 
         var i = 0;
         var htmlHolder = [];
@@ -50,11 +115,11 @@ function populateWeather(weatherData){
             i++;
         }
 
-        //Fills forecast panels
+        //Fills forecast panels with array html
 
         $('#today').html(htmlHolder[0] + '<h3>Today</h3>');
         $('#tomorrow').html(htmlHolder[8] + '<h3>Tomorrow</h3>');
-        $('#threeDay').html(htmlHolder[16] + '<h3>Overmorrow</h3>');
+        $('#threeDay').html(htmlHolder[16] + '<h3>' + findDay(2) + '</h3>');
 
 }
 
@@ -64,8 +129,7 @@ function latLongSearch(lat, long){
 
     $.ajax("http://api.openweathermap.org/data/2.5/forecast?" +
         "appid=9b5be99373201bec63106efe33259a14&" +
-        "units=imperial&" + "lat=" + lat +
-        "&lon=" + long
+        "units=imperial&" + "lat=" + lat + "&lon=" + long
     ).done(populateWeather);
 }
 
@@ -100,20 +164,9 @@ latLongSearch(lat, long);
         //Marker listener, updates weather from new marker position
 
         marker.addListener('dragend', function () {
+
             latLongSearch(marker.getPosition().lat(), marker.getPosition().lng());
-
-            //Scroll up to forecast panels
-
-            var yPos = window.pageYOffset;
-            var interval = setInterval(function () {
-                if(yPos > 220){
-                window.scrollTo(0, yPos);
-                yPos-=4;
-                if(yPos <= 220){
-                    clearInterval(interval);
-                }}
-            }, 1);
-
+            scrollForBestView();
 
         });
 
@@ -121,17 +174,18 @@ latLongSearch(lat, long);
 
         function onGeocode(result){
 
-                var location = result[0].geometry.location;
+            var location = result[0].geometry.location;
 
-                //Move map and marker to new coordinates
+            //Move map and marker to new coordinates
 
-                map.setCenter(location);
-                map.setZoom(9);
-                marker.setPosition({lat: location.lat(), lng: location.lng()});
+            map.setCenter(location);
+            map.setZoom(9);
+            marker.setPosition({lat: location.lat(), lng: location.lng()});
 
-                //renders forecast panels with new city
+            //renders forecast panels with new city
 
-                latLongSearch(location.lat(), location.lng());
+            latLongSearch(location.lat(), location.lng());
+
         }
 
         //Geocode event listener (Runs off of the enter key)
@@ -141,21 +195,17 @@ latLongSearch(lat, long);
             if(e.charCode === 13){
             geocoder.geocode({'address': $('#citySearch').val()}, onGeocode);
 
-            //Scroll down a little
-
-            var yPos = window.pageYOffset;
-            var interval = setInterval(function () {
-                if(yPos < 220){
-                    window.scrollTo(0, yPos);
-                    yPos+=4;
-                    if(yPos >= 220){
-                        clearInterval(interval);
-                    }}
-            }, 1);
+            scrollForBestView();
             }
         });
 
+        //Geocode event listener (Runs off of the search button)
+
+        $('#citySearchBtn').click(function () {
+
+            geocoder.geocode({'address': $('#citySearch').val()}, onGeocode);
+
+            scrollForBestView();
+        })
 
     }
-
-
