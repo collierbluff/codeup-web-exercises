@@ -14,17 +14,11 @@ function mathBoolean(a, b, c) {
 
 }
 
-function titleCase(input){
+//Function to scroll to an element's ID, takes a string
 
-        input = input.toLowerCase();
-        let strArr = input.split(' ');
+function scrollToID(id) {
 
-        for(let i = 0; i < strArr.length; i++){
-
-            strArr[i] = strArr[i].charAt(0).toUpperCase() + strArr[i].slice(1);
-    }
-
-    return strArr.join(' ');
+    document.getElementById(id).scrollIntoView({block: 'start', behavior: 'smooth'});
 
 }
 

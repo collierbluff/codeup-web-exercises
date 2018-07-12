@@ -31,38 +31,12 @@ function findDay(modifier = 0) {
 }
 console.log(findDay());
 
-//Function to scroll to ideal viewing Y value
+//Function to scroll to an element's ID, takes a string
 
-function scrollForBestView() {
+function scrollToID(id) {
 
-    let yPos = window.pageYOffset;
-    let desiredY = 205;
-    let moveSpeed = 5;
+    document.getElementById(id).scrollIntoView({block: 'start', behavior: 'smooth'});
 
-    //Speeds up scroll if screen is small
-
-    if((window.matchMedia("(max-width: 720px)")).matches){
-        moveSpeed = 15;
-    }
-
-    let interval = setInterval(function () {
-        //If too low
-        if(yPos < desiredY){
-            window.scrollTo(0, yPos);
-            yPos += moveSpeed;
-
-            if(yPos >= desiredY){
-                clearInterval(interval);
-            }}
-        //If too high
-        else if(yPos > desiredY){
-            window.scrollTo(0, yPos);
-            yPos -= moveSpeed;
-            if(yPos <= desiredY){
-                clearInterval(interval);
-            }}
-
-            }, 1);
 }
 
 //Fills the forecast panels with the appropriate weather data
@@ -77,7 +51,9 @@ function populateWeather(weatherData){
 
         $('#cityName').text(weatherData.city.name);
 
+        //Animate
 
+    $('#forecastRow').css({'opacity': '0', 'position': 'relative', 'left': '100%'}).animate({left: "0", opacity: 1}, 800);
 
         //Grabs three days of data from the weather api (Three hour intervals) and pushes to array with formatting
 
@@ -161,7 +137,7 @@ latLongSearch(lat, long);
         marker.addListener('dragend', function () {
 
             latLongSearch(marker.getPosition().lat(), marker.getPosition().lng());
-            scrollForBestView();
+            scrollToID('cityName');
 
         });
 
@@ -190,7 +166,7 @@ latLongSearch(lat, long);
             if(e.charCode === 13){
             geocoder.geocode({'address': $('#citySearch').val()}, onGeocode);
 
-            scrollForBestView();
+            scrollToID('cityName');
             }
         });
 
@@ -200,7 +176,7 @@ latLongSearch(lat, long);
 
             geocoder.geocode({'address': $('#citySearch').val()}, onGeocode);
 
-            scrollForBestView();
+            scrollToID('cityName');
         })
 
     }
