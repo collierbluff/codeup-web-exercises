@@ -1,6 +1,6 @@
 
 
-var dog = {
+let dog = {
 
   breed: "Mutt",
   weightInPounds: 50,

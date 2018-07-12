@@ -11,7 +11,7 @@
      *  > console.log(person.lastName) // "Sanchez"
      */
 
-    var person = {
+    let person = {
 
         firstName: "Collier",
         lastName: "Bluff"
@@ -50,7 +50,7 @@
      * and console.log the relevant messages for each person
      */
 
-    var shoppers = [
+    let shoppers = [
         {name: 'Cameron', amount: 180},
         {name: 'Ryan', amount: 250},
         {name: 'George', amount: 320}
@@ -80,32 +80,32 @@
      */
 
 
-    var theHobbit = {
+    let theHobbit = {
 
         title: "The Hobbit", author: {firstName: "John", lastName: "Tolkien"}
     };
 
-    var crystalShard = {
+    let crystalShard = {
 
         title: "The Crystal Shard", author: {firstName: "Robert", lastName: "Salvatore"}
     };
 
-    var homeland = {
+    let homeland = {
 
         title: "Homeland", author: {firstName: "Robert", lastName: "Salvatore"}
     };
 
-    var wizards = {
+    let wizards = {
 
         title: "Wizard's First Rule", author: {firstName: "Terry", lastName: "Goodkind"}
     };
 
-    var ender = {
+    let ender = {
 
         title: "Ender's Game", author: {firstName: "Orson", lastName: "Card"}
     };
 
-var books = [theHobbit, crystalShard, homeland, wizards, ender];
+let books = [theHobbit, crystalShard, homeland, wizards, ender];
 
 
 
@@ -154,10 +154,10 @@ var books = [theHobbit, crystalShard, homeland, wizards, ender];
 
     function createBook(title, authorName) {
 
-        var name = authorName.split(" ");
+        let name = authorName.split(" ");
 
-        var first = name[0];
-        var last = name[1];
+        let first = name[0];
+        let last = name[1];
 
         return {title: title, author: {firstName: first, lastName: last}};
     }

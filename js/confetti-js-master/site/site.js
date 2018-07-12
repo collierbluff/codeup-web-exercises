@@ -1,5 +1,5 @@
-var AppClass = function() {
-  var appstate = {
+let AppClass = function() {
+  let appstate = {
     target: 'confetti-holder',
     max: 80,
     size: 1,
@@ -11,10 +11,10 @@ var AppClass = function() {
     height: window.innerHeight
   };
 
-  var confetti = null;
+  let confetti = null;
 
   //
-  var updateForm = function() {
+  let updateForm = function() {
     document.getElementById('canvas-id').value = appstate.target;
     document.getElementById('max-confetti').value = appstate.max;
     document.getElementById('clock').value = appstate.clock;
@@ -27,7 +27,7 @@ var AppClass = function() {
     document.getElementById('triangle').checked = appstate.props.indexOf('triangle') > -1;
     document.getElementById('line').checked = appstate.props.indexOf('line') > -1;
 
-    var parsedColors = JSON.stringify(appstate.colors);
+    let parsedColors = JSON.stringify(appstate.colors);
     document.getElementById('colors').value = parsedColors.substring(1, parsedColors.length - 1);
 
     document.getElementById('animate').checked = appstate.animate;
@@ -35,7 +35,7 @@ var AppClass = function() {
     document.getElementById('json-output').innerHTML = JSON.stringify(appstate);
   };
 
-  var updateState = function() {
+  let updateState = function() {
     appstate.target = document.getElementById('canvas-id').value;
     appstate.max = document.getElementById('max-confetti').value;
     appstate.clock = document.getElementById('clock').value;
@@ -62,7 +62,7 @@ var AppClass = function() {
   };
   //
 
-  var render = function() {
+  let render = function() {
     updateState();
     if(confetti)
       confetti.clear();
@@ -70,7 +70,7 @@ var AppClass = function() {
     confetti.render();
   };
 
-  var start = function() {
+  let start = function() {
     updateForm();
     render();
   };
@@ -83,7 +83,7 @@ var AppClass = function() {
 
 ///
 
-var app = null;
+let app = null;
 
 window.onload = function(){
   app = new AppClass();

@@ -3,9 +3,9 @@
 function titleCase(input) {
 
     input = input.toLowerCase();
-    var strArr = input.split(' ');
+    let strArr = input.split(' ');
 
-    for (var i = 0; i < strArr.length; i++) {
+    for (let i = 0; i < strArr.length; i++) {
         strArr[i] = strArr[i].charAt(0).toUpperCase() + strArr[i].slice(1);
     }
     return strArr.join(' ');
@@ -15,15 +15,15 @@ function titleCase(input) {
 
 function findDay(modifier) {
 
-    var daysOfTheWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    let daysOfTheWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
     //Provides a default modifier for empty function calls
     if(typeof modifier !== 'number'){
         modifier = 0;
     }
 
-    var dayIndex = new Date().getDay();
-    var desiredDay = dayIndex + modifier;
+    let dayIndex = new Date().getDay();
+    let desiredDay = dayIndex + modifier;
 
     //If modifier would push us out of week array, treat as a different week
     while((desiredDay) > 6){
@@ -40,9 +40,9 @@ function findDay(modifier) {
 
 function scrollForBestView() {
 
-    var yPos = window.pageYOffset;
-    var desiredY = 220;
-    var moveSpeed = 5;
+    let yPos = window.pageYOffset;
+    let desiredY = 220;
+    let moveSpeed = 5;
 
     //Speeds up scroll if screen is small
 
@@ -50,7 +50,7 @@ function scrollForBestView() {
         moveSpeed = 15;
     }
 
-    var interval = setInterval(function () {
+    let interval = setInterval(function () {
         //If too low
         if(yPos < desiredY){
             window.scrollTo(0, yPos);
@@ -86,12 +86,12 @@ function populateWeather(weatherData){
 
         //Grabs three days of data from the weather api (Three hour intervals) and pushes to array with formatting
 
-        var i = 0;
-        var htmlHolder = [];
+        let i = 0;
+        let htmlHolder = [];
         while(i <= 16){
 
             //Temperature
-            var html = '<h3 class="temp">';
+            let html = '<h3 class="temp">';
             html += weatherData.list[i].main.temp_max.toFixed(1)+ '&#176 F' + ' / '
                 + weatherData.list[i].main.temp_min.toFixed(1)+ '&#176 F' + '</h3>';
 
@@ -135,8 +135,8 @@ function latLongSearch(lat, long){
 
 //Initial Lat/Long declaration and forecast panel render (San Antonio)
 
-var lat = 29.4241;
-var long = -98.4937;
+let lat = 29.4241;
+let long = -98.4937;
 
 latLongSearch(lat, long);
 
@@ -144,22 +144,22 @@ latLongSearch(lat, long);
 
     function initMap() {
 
-        var mapOptions={
+        let mapOptions={
             zoom: 9,
             center: {
                 lat: lat,
                 lng: long
             }};
 
-        var map = new google.maps.Map(document.getElementById('map-canvas'),mapOptions);
+        let map = new google.maps.Map(document.getElementById('map-canvas'),mapOptions);
 
-        var marker = new google.maps.Marker({
+        let marker = new google.maps.Marker({
             map:map,
             draggable: true,
             position: {lat: lat, lng: long}
         });
 
-        var geocoder = new google.maps.Geocoder();
+        let geocoder = new google.maps.Geocoder();
 
         //Marker listener, updates weather from new marker position
 
@@ -174,7 +174,7 @@ latLongSearch(lat, long);
 
         function onGeocode(result){
 
-            var location = result[0].geometry.location;
+            let location = result[0].geometry.location;
 
             //Move map and marker to new coordinates
 

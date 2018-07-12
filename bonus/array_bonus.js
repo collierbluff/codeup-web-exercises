@@ -3,9 +3,9 @@
 (function(){
 
 
-    var sampleString = "Test+Case";
+    let sampleString = "Test+Case";
 
-    var stringARay = sampleString.split("");
+    let stringARay = sampleString.split("");
 
     // console.log(stringARay);
 
@@ -30,7 +30,7 @@ stringARay.forEach(function (stringChar, index) {
 
 function checkStrNum(string) {
 
-    var strAR = string.split("");
+    let strAR = string.split("");
 
     if(strAR.length === parseFloat(strAR[strAR.length - 1])){
 

@@ -1,8 +1,8 @@
 (function(){
     "use strict";
 
-    var planetsString = "Mercury|Venus|Earth|Mars|Jupiter|Saturn|Uranus|Neptune";
-    var planetsArray;
+    let planetsString = "Mercury|Venus|Earth|Mars|Jupiter|Saturn|Uranus|Neptune";
+    let planetsArray;
 
     /*
      * Convert planetsString to an array, and save it in a variable named
@@ -24,7 +24,7 @@
      * string, and <li> tags around each planet.
      */
 
-    var brString = planetsArray.join("<br>");
+    let brString = planetsArray.join("<br>");
 
     console.log(brString);
 

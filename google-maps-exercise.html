@@ -26,8 +26,8 @@
 
     function initMap() {
 
-        var mapCanvas = document.getElementById('map-canvas');
-        var mapOptions = {
+        let mapCanvas = document.getElementById('map-canvas');
+        let mapOptions = {
 
           zoom: 10,
           center: {
@@ -35,11 +35,11 @@
               lng: -98.48602
           }
         };
-        var map = new google.maps.Map(mapCanvas, mapOptions);
+        let map = new google.maps.Map(mapCanvas, mapOptions);
 
         //geocoding
 
-        var geo = new google.maps.Geocoder();
+        let geo = new google.maps.Geocoder();
         //
         // geo.geocode({address: "1 UTSA Circle"}, function (response, status) {
         //

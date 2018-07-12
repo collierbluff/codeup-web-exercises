@@ -9,7 +9,7 @@
 
     function showMultiplicationTable(input) {
 
-        for(var i = 1; i <= 10; i++) {
+        for(let i = 1; i <= 10; i++) {
 
             console.log(input + " x " + i + " = " + (input * i));
     }
@@ -17,7 +17,7 @@
 
 showMultiplicationTable(5);
 
-        for(var y = 0; y <= 10; y++){
+        for(let y = 0; y <= 10; y++){
 
             var random_num = Math.random() * (200 - 20) + 20;
 

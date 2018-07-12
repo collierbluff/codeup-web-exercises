@@ -5,7 +5,7 @@
 
 
     // do{
-    //     var userDay = (prompt("What's your favorite day of the week?")).toLowerCase();
+    //     let userDay = (prompt("What's your favorite day of the week?")).toLowerCase();
     //
     //     if (userDay === "monday"){
     //
@@ -50,7 +50,7 @@
 
 
     // do {
-    //     var userDay = (prompt("What's your favorite day of the week?")).toLowerCase();
+    //     let userDay = (prompt("What's your favorite day of the week?")).toLowerCase();
     //
     //     switch (userDay) {
     //         case "monday":
@@ -95,7 +95,7 @@
 
     // function numberTest() {
     //
-    //     var num = prompt("Name a number!?!?!?");
+    //     let num = prompt("Name a number!?!?!?");
     //
     //     if (!isNumeric(num)){alert("That's not a number!")}
     //     else {alert("That's a number!")}
@@ -103,7 +103,7 @@
 
     // function numberTest(){
     //
-    //     var num = prompt("Name a number!?!?!?");
+    //     let num = prompt("Name a number!?!?!?");
     //
     //     alert(isNumeric(num) ? "That's a number!" : "That's not a number!")
     //

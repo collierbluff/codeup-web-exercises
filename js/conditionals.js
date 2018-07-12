@@ -22,11 +22,11 @@ function isEven(num){
     return num % 2 === 0;
 }
 
-// var number_question = confirm("Would you like to enter a number?");
+// let number_question = confirm("Would you like to enter a number?");
 //
 // if (number_question === true){
 //
-//     var number = Number(prompt("What's the Number?"));
+//     let number = Number(prompt("What's the Number?"));
 //
 //     if (number + Infinity !== Infinity){
 //
@@ -111,8 +111,8 @@ function analyzeColor(colorName) {
 // - `colors`: a list of the colors of the rainbow
 // - `randomColor`: contains a single random color value from the list (this
 //                  will contain a different color everytime the page loads)
-var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
-var randomColor = colors[Math.floor(Math.random() * colors.length)];
+let colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
+let randomColor = colors[Math.floor(Math.random() * colors.length)];
 /*
  * Pass the `randomColor` variable to your function and console.log the results.
  * You should see a different message everytime you refresh the page
@@ -125,7 +125,7 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * Refactor your above function to use a switch-case statement
  */
 
-// var colorName = randomColor;
+// let colorName = randomColor;
 
 // switch (colorName){
 //     case 'blue':
@@ -151,7 +151,7 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * function to show it to the user.
  */
 
-// var colorName = prompt("Pick a Color:");
+// let colorName = prompt("Pick a Color:");
 //
 // alert(analyzeColor(colorName));
 
@@ -210,9 +210,9 @@ function calculateTotal(luck_number, total_amount){
 
 // Generate a random number between 0 and 5
 
-// var luckyNumber = Math.floor(Math.random() * 5);
+// let luckyNumber = Math.floor(Math.random() * 5);
 //
-// var total_price = prompt("What was your total bill?");
+// let total_price = prompt("What was your total bill?");
 //
 // alert("Your lucky number was " + luckyNumber + "!");
 //

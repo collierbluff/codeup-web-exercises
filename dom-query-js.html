@@ -39,22 +39,22 @@
     (function() {
 
 
-        var headerBtn = document.getElementById('headerChange');
+        let headerBtn = document.getElementById('headerChange');
         headerBtn.addEventListener('click', function () {
 
-            var mainHeader = document.getElementById('main-header');
+            let mainHeader = document.getElementById('main-header');
             mainHeader.innerHTML = "JavaScript is Cool";
 
         });
 
-        var listBtn = document.getElementById('listChange');
+        let listBtn = document.getElementById('listChange');
 
         listBtn.addEventListener('click', function () {
 
 
-            var listItems = document.getElementsByTagName("li") ;
+            let listItems = document.getElementsByTagName("li") ;
 
-            for(var i = 0; i < listItems.length; i++) {
+            for(let i = 0; i < listItems.length; i++) {
 
                 if (listItems[i].getAttribute("data-dbid") === '1'){listItems[i].style.color = "blue"}
                 else if(i % 2 !== 0){
@@ -65,18 +65,18 @@
         });
 
 
-        var subBtn = document.getElementById('subChange');
+        let subBtn = document.getElementById('subChange');
         subBtn.addEventListener('click', function () {
 
-            var subHeader = document.getElementById('sub-header');
+            let subHeader = document.getElementById('sub-header');
 
             subHeader.style.color = "blue";
         });
 
-        var paraBtn = document.getElementById('paraChange');
+        let paraBtn = document.getElementById('paraChange');
         paraBtn.addEventListener('click', function () {
 
-            var subPara = document.getElementsByClassName('sub-paragraph');
+            let subPara = document.getElementsByClassName('sub-paragraph');
             subPara[0].innerHTML = "Mission Accomplished!";
 
         });

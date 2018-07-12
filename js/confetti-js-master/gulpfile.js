@@ -1,12 +1,12 @@
 'use strict';
 
-var gulp = require('gulp');
-var concat = require('gulp-concat');
-var rename = require('gulp-rename');
-var minify = require('gulp-minify');
+let gulp = require('gulp');
+let concat = require('gulp-concat');
+let rename = require('gulp-rename');
+let minify = require('gulp-minify');
 
 // JS building
-var scriptsToBundle = ['./dist/index.js'];
+let scriptsToBundle = ['./dist/index.js'];
 
 gulp.task('bundle-js', function() {
   return gulp.src(scriptsToBundle)
