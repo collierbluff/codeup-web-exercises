@@ -13,15 +13,9 @@ function titleCase(input) {
 
 //Takes browsers day index and returns string of day, can take a modifier number to traverse week
 
-function findDay(modifier) {
+function findDay(modifier = 0) {
 
     let daysOfTheWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-
-    //Provides a default modifier for empty function calls
-    if(typeof modifier !== 'number'){
-        modifier = 0;
-    }
-
     let dayIndex = new Date().getDay();
     let desiredDay = dayIndex + modifier;
 
@@ -35,6 +29,7 @@ function findDay(modifier) {
 
     return daysOfTheWeek[desiredDay];
 }
+console.log(findDay());
 
 //Function to scroll to ideal viewing Y value
 
