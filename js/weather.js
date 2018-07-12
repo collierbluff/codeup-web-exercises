@@ -41,7 +41,7 @@ function findDay(modifier) {
 function scrollForBestView() {
 
     var yPos = window.pageYOffset;
-    var desiredY = 210;
+    var desiredY = 220;
     var moveSpeed = 5;
 
     //Speeds up scroll if screen is small
@@ -71,7 +71,7 @@ function scrollForBestView() {
 }
 
 //Fills the forecast panels with the appropriate weather data
-//todo: animate render
+
 function populateWeather(weatherData){
 
         //Clear Search Bar Text
@@ -91,9 +91,9 @@ function populateWeather(weatherData){
         while(i <= 16){
 
             //Temperature
-            var html = '<h2 class="temp">';
+            var html = '<h3 class="temp">';
             html += weatherData.list[i].main.temp_max.toFixed(1)+ '&#176 F' + ' / '
-                + weatherData.list[i].main.temp_min.toFixed(1)+ '&#176 F' + '</h2>';
+                + weatherData.list[i].main.temp_min.toFixed(1)+ '&#176 F' + '</h3>';
 
             //Default Icon Set with one exception
 
