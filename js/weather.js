@@ -138,6 +138,7 @@ latLongSearch(lat, long);
 
             latLongSearch(marker.getPosition().lat(), marker.getPosition().lng());
             scrollToID('cityName');
+            map.setCenter({lat: marker.getPosition().lat(), lng: marker.getPosition().lng()});
 
         });
 
