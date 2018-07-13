@@ -29,7 +29,6 @@ function findDay(modifier = 0) {
 
     return daysOfTheWeek[desiredDay];
 }
-console.log(findDay());
 
 //Function to scroll to an element's ID, takes a string
 
@@ -53,7 +52,7 @@ function populateWeather(weatherData){
 
         //Animate
 
-    $('#forecastRow').css({'opacity': '0', 'position': 'relative', 'left': '100%'}).animate({left: "0", opacity: 1}, 800);
+    $('.slideIn').css({'opacity': '0', 'position': 'relative', 'left': '100%'}).animate({left: "0", opacity: 1}, 800);
 
         //Grabs three days of data from the weather api (Three hour intervals) and pushes to array with formatting
 
@@ -87,10 +86,11 @@ function populateWeather(weatherData){
         }
 
         //Fills forecast panels with array html
+    //todo: make forecast render more dynamic, allow user to change number of days in forecast
 
-        $('#today').html(htmlHolder[0] + '<h3>Today</h3>');
-        $('#tomorrow').html(htmlHolder[8] + '<h3>Tomorrow</h3>');
-        $('#threeDay').html(htmlHolder[16] + '<h3>' + findDay(2) + '</h3>');
+        $('.today').html(htmlHolder[0] + '<h3>Today</h3>');
+        $('.tomorrow').html(htmlHolder[8] + '<h3>Tomorrow</h3>');
+        $('.threeDay').html(htmlHolder[16] + '<h3>' + findDay(2) + '</h3>');
 
 }
 
