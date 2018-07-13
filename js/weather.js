@@ -85,8 +85,7 @@ function populateWeather(weatherData){
             i++;
         }
 
-        //Fills forecast panels with array html
-    //todo: make forecast render more dynamic, allow user to change number of days in forecast
+        //Fills forecast panels and carousel with array html
 
         $('.today').html(htmlHolder[0] + '<h3>Today</h3>');
         $('.tomorrow').html(htmlHolder[8] + '<h3>Tomorrow</h3>');
