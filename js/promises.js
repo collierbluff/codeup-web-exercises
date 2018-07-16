@@ -1,14 +1,10 @@
 "use strict";
 
-function wait(millisecondDelay){
+function wait(delay){
 
     return new Promise((resolve) =>
-    {setTimeout(() => {resolve()}, millisecondDelay)});
+    {setTimeout(()=> {resolve()}, delay)});
 }
-
-
-
-
 
 
 const gitHubApiKey = 'efeb596a33d5f7070c11ecdd585ba4733eed337d';
@@ -22,8 +18,6 @@ function gitHubLookUpLastPush(username){
             .then(response => resolve(response[0].created_at));
         });
 }
-
-console.log(gitHubLookUpLastPush('collierbluff'));
 
 
 
